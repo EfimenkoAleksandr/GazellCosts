@@ -1,0 +1,792 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040361CD2147AFCE00AF567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040361CC2147AFCE00AF567D /* AppDelegate.swift */; };
+		040361D22147AFCE00AF567D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040361D02147AFCE00AF567D /* Main.storyboard */; };
+		040361D52147AFCE00AF567D /* GazelleCosts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 040361D32147AFCE00AF567D /* GazelleCosts.xcdatamodeld */; };
+		040361D72147AFD000AF567D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040361D62147AFD000AF567D /* Assets.xcassets */; };
+		040361DA2147AFD000AF567D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040361D82147AFD000AF567D /* LaunchScreen.storyboard */; };
+		040361E22147B0B400AF567D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040361E12147B0B400AF567D /* CoreDataManager.swift */; };
+		0415DE30219610F900908DC1 /* SparePartsReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DE2F219610F900908DC1 /* SparePartsReportViewController.swift */; };
+		043D24F22195922B00742D69 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D24F12195922B00742D69 /* HelperMethods.swift */; };
+		0440817B21774C4A0058CC6A /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440817A21774C4A0058CC6A /* InitialData.swift */; };
+		044081C721775BBC0058CC6A /* Амортизаторы.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440817D21775BBC0058CC6A /* Амортизаторы.jpg */; };
+		044081C821775BBC0058CC6A /* Барабан_тормозной.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440817E21775BBC0058CC6A /* Барабан_тормозной.jpg */; };
+		044081C921775BBC0058CC6A /* Бендекс.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440817F21775BBC0058CC6A /* Бендекс.jpg */; };
+		044081CA21775BBC0058CC6A /* Бензонасос_электро.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818021775BBC0058CC6A /* Бензонасос_электро.jpg */; };
+		044081CB21775BBC0058CC6A /* Болт_ресоры.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818121775BBC0058CC6A /* Болт_ресоры.jpg */; };
+		044081CC21775BBC0058CC6A /* Болты_кардана.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818221775BBC0058CC6A /* Болты_кардана.jpg */; };
+		044081CD21775BBC0058CC6A /* Венец_маховика.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818321775BBC0058CC6A /* Венец_маховика.jpg */; };
+		044081CE21775BBC0058CC6A /* Вилка_сцепления.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818421775BBC0058CC6A /* Вилка_сцепления.jpg */; };
+		044081CF21775BBC0058CC6A /* Втулка_амортизатора.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818521775BBC0058CC6A /* Втулка_амортизатора.jpg */; };
+		044081D021775BBC0058CC6A /* Втулки_клапвнов.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818621775BBC0058CC6A /* Втулки_клапвнов.jpg */; };
+		044081D121775BBC0058CC6A /* Втягивающее_реле.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818721775BBC0058CC6A /* Втягивающее_реле.jpg */; };
+		044081D221775BBC0058CC6A /* Выжимной_подшибник.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818821775BBC0058CC6A /* Выжимной_подшибник.jpg */; };
+		044081D321775BBC0058CC6A /* Генератор.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818921775BBC0058CC6A /* Генератор.jpg */; };
+		044081D421775BBC0058CC6A /* Главная_пара.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818A21775BBC0058CC6A /* Главная_пара.jpg */; };
+		044081D521775BBC0058CC6A /* Главный_целиндр_сцепления.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818B21775BBC0058CC6A /* Главный_целиндр_сцепления.jpg */; };
+		044081D621775BBC0058CC6A /* Глушитель.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818C21775BBC0058CC6A /* Глушитель.jpg */; };
+		044081D721775BBC0058CC6A /* Головка_блока_целиндров.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818D21775BBC0058CC6A /* Головка_блока_целиндров.jpg */; };
+		044081D821775BBC0058CC6A /* Диск_опорный.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818E21775BBC0058CC6A /* Диск_опорный.jpg */; };
+		044081D921775BBC0058CC6A /* Диск_передний_тормозной.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440818F21775BBC0058CC6A /* Диск_передний_тормозной.jpg */; };
+		044081DA21775BBC0058CC6A /* Замок_зажигания.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819021775BBC0058CC6A /* Замок_зажигания.jpg */; };
+		044081DB21775BBC0058CC6A /* Карданчик_вала_руля.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819121775BBC0058CC6A /* Карданчик_вала_руля.jpg */; };
+		044081DC21775BBC0058CC6A /* Картер_заднего_моста.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819221775BBC0058CC6A /* Картер_заднего_моста.jpg */; };
+		044081DD21775BBC0058CC6A /* Клапаны_двигателя.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819321775BBC0058CC6A /* Клапаны_двигателя.jpg */; };
+		044081DE21775BBC0058CC6A /* Колдки_тормозные_задние.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819421775BBC0058CC6A /* Колдки_тормозные_задние.jpg */; };
+		044081DF21775BBC0058CC6A /* Колёсный_диск.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819521775BBC0058CC6A /* Колёсный_диск.jpg */; };
+		044081E021775BBC0058CC6A /* Колодки_тормозные_передние.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819621775BBC0058CC6A /* Колодки_тормозные_передние.jpg */; };
+		044081E121775BBC0058CC6A /* Кольца_поршневые.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819721775BBC0058CC6A /* Кольца_поршневые.jpg */; };
+		044081E221775BBC0058CC6A /* Комплект_натяжительного_устройства.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819821775BBC0058CC6A /* Комплект_натяжительного_устройства.jpg */; };
+		044081E321775BBC0058CC6A /* Крестовина.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819921775BBC0058CC6A /* Крестовина.jpg */; };
+		044081E421775BBC0058CC6A /* Лист_ресоры.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819A21775BBC0058CC6A /* Лист_ресоры.jpg */; };
+		044081E521775BBC0058CC6A /* Насос_системы_охлаждения.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819B21775BBC0058CC6A /* Насос_системы_охлаждения.jpg */; };
+		044081E621775BBC0058CC6A /* Патрубки_системы_охлаждения.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819C21775BBC0058CC6A /* Патрубки_системы_охлаждения.jpg */; };
+		044081E721775BBC0058CC6A /* Переключатель_поворотов.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819D21775BBC0058CC6A /* Переключатель_поворотов.jpg */; };
+		044081E821775BBC0058CC6A /* Подвисной.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819E21775BBC0058CC6A /* Подвисной.jpg */; };
+		044081E921775BBC0058CC6A /* Подвисной_некст.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0440819F21775BBC0058CC6A /* Подвисной_некст.jpg */; };
+		044081EA21775BBC0058CC6A /* Подушка_двигателя.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A021775BBC0058CC6A /* Подушка_двигателя.jpg */; };
+		044081EB21775BBC0058CC6A /* Полуось_задняя.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A121775BBC0058CC6A /* Полуось_задняя.jpg */; };
+		044081EC21775BBC0058CC6A /* Поршни_двигателя.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A221775BBC0058CC6A /* Поршни_двигателя.jpg */; };
+		044081ED21775BBC0058CC6A /* Провода_высоковольтные.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A321775BBC0058CC6A /* Провода_высоковольтные.jpg */; };
+		044081EE21775BBC0058CC6A /* Прокладка_головки_блока.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A421775BBC0058CC6A /* Прокладка_головки_блока.jpg */; };
+		044081EF21775BBC0058CC6A /* Прокладки_двигателя.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A521775BBC0058CC6A /* Прокладки_двигателя.jpg */; };
+		044081F021775BBC0058CC6A /* Радиатор_отопителя.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A621775BBC0058CC6A /* Радиатор_отопителя.jpg */; };
+		044081F121775BBC0058CC6A /* Радиатор_охлаждения.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A721775BBC0058CC6A /* Радиатор_охлаждения.jpg */; };
+		044081F221775BBC0058CC6A /* Редуктор_заднего_моста.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A821775BBC0058CC6A /* Редуктор_заднего_моста.jpg */; };
+		044081F321775BBC0058CC6A /* Ремень_генератора.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081A921775BBC0058CC6A /* Ремень_генератора.jpg */; };
+		044081F421775BBC0058CC6A /* Ролик_натяжной_ремня.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081AA21775BBC0058CC6A /* Ролик_натяжной_ремня.jpg */; };
+		044081F621775BBC0058CC6A /* Саленблок_ресоры.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081AC21775BBC0058CC6A /* Саленблок_ресоры.jpg */; };
+		044081F721775BBC0058CC6A /* Сальники_клапанов.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081AD21775BBC0058CC6A /* Сальники_клапанов.jpg */; };
+		044081F821775BBD0058CC6A /* Свечи_405.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081AE21775BBC0058CC6A /* Свечи_405.jpg */; };
+		044081F921775BBD0058CC6A /* Свечи_некст.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081AF21775BBC0058CC6A /* Свечи_некст.jpg */; };
+		044081FA21775BBD0058CC6A /* Серьга_ресоры.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B021775BBC0058CC6A /* Серьга_ресоры.jpg */; };
+		044081FB21775BBD0058CC6A /* Стартер.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B121775BBC0058CC6A /* Стартер.jpg */; };
+		044081FC21775BBD0058CC6A /* Стремянка_зад.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B221775BBC0058CC6A /* Стремянка_зад.jpg */; };
+		044081FD21775BBD0058CC6A /* Стяжной_болт_кардана.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B321775BBC0058CC6A /* Стяжной_болт_кардана.jpg */; };
+		044081FF21775BBD0058CC6A /* Тормозной_целиндр_задний.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B521775BBC0058CC6A /* Тормозной_целиндр_задний.jpg */; };
+		0440820021775BBD0058CC6A /* Траверса.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B621775BBC0058CC6A /* Траверса.jpg */; };
+		0440820121775BBD0058CC6A /* Трос_ручника.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B721775BBC0058CC6A /* Трос_ручника.jpg */; };
+		0440820221775BBD0058CC6A /* Усилитель_тормозной_вакуумный.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B821775BBC0058CC6A /* Усилитель_тормозной_вакуумный.jpg */; };
+		0440820321775BBD0058CC6A /* Фиксатор_задней_тормозной_колодки.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081B921775BBC0058CC6A /* Фиксатор_задней_тормозной_колодки.jpg */; };
+		0440820421775BBD0058CC6A /* Фильтр_масляный.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081BA21775BBC0058CC6A /* Фильтр_масляный.jpg */; };
+		0440820521775BBD0058CC6A /* Фланец_заднего_моста.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081BB21775BBC0058CC6A /* Фланец_заднего_моста.jpg */; };
+		0440820621775BBD0058CC6A /* Цилиндр_тормозной_главный.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081BC21775BBC0058CC6A /* Цилиндр_тормозной_главный.jpg */; };
+		0440820721775BBD0058CC6A /* Часть_кардана.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081BD21775BBC0058CC6A /* Часть_кардана.jpg */; };
+		0440820821775BBD0058CC6A /* Шарнир_рулевой.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081BE21775BBC0058CC6A /* Шарнир_рулевой.jpg */; };
+		0440820921775BBD0058CC6A /* Шаровая_опора_верх.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081BF21775BBC0058CC6A /* Шаровая_опора_верх.jpg */; };
+		0440820A21775BBD0058CC6A /* Шаровая_опора_низ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081C021775BBC0058CC6A /* Шаровая_опора_низ.jpg */; };
+		0440820B21775BBD0058CC6A /* Шкворень.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081C121775BBC0058CC6A /* Шкворень.jpg */; };
+		0440820C21775BBD0058CC6A /* Шкив_коленного_вала.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081C221775BBC0058CC6A /* Шкив_коленного_вала.jpg */; };
+		0440820D21775BBD0058CC6A /* Шкив_помпы.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081C321775BBC0058CC6A /* Шкив_помпы.jpg */; };
+		0440820E21775BBD0058CC6A /* Шпилька_колеса.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081C421775BBC0058CC6A /* Шпилька_колеса.jpg */; };
+		0440820F21775BBD0058CC6A /* Щётки_генератора.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081C521775BBC0058CC6A /* Щётки_генератора.jpg */; };
+		0440821021775BBD0058CC6A /* Электродвигатель_отопления.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044081C621775BBC0058CC6A /* Электродвигатель_отопления.jpg */; };
+		044229F5215399F400433AC5 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044229F4215399F400433AC5 /* CarViewController.swift */; };
+		044229F72153B55100433AC5 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044229F62153B55100433AC5 /* CarTableViewCell.swift */; };
+		044573332170851100A21831 /* Двигатель.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0445732C2170851000A21831 /* Двигатель.jpg */; };
+		044573342170851100A21831 /* Кардан.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0445732D2170851000A21831 /* Кардан.jpg */; };
+		044573352170851100A21831 /* Подвеска.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0445732E2170851000A21831 /* Подвеска.jpg */; };
+		044573362170851100A21831 /* Рулевой_механизм.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0445732F2170851000A21831 /* Рулевой_механизм.jpg */; };
+		044573372170851100A21831 /* Система_охлаждения.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044573302170851000A21831 /* Система_охлаждения.jpg */; };
+		044573382170851100A21831 /* Сцепление.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044573312170851000A21831 /* Сцепление.jpg */; };
+		044573392170851100A21831 /* Электро_оборудование.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044573322170851000A21831 /* Электро_оборудование.jpg */; };
+		0445733B217095F800A21831 /* PartInCategoriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445733A217095F800A21831 /* PartInCategoriViewController.swift */; };
+		0445733D2170A72100A21831 /* PartCategoriCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445733C2170A72100A21831 /* PartCategoriCell.swift */; };
+		04463417216CC72F00A8724E /* SparePartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04463416216CC72F00A8724E /* SparePartsCell.swift */; };
+		04463419216CD3FE00A8724E /* SparePartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04463418216CD3FE00A8724E /* SparePartsViewController.swift */; };
+		0457458E21A2BA64000D87FF /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457458D21A2BA64000D87FF /* Section.swift */; };
+		0457459021A2BB3F000D87FF /* ExpandebleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457458F21A2BB3F000D87FF /* ExpandebleHeaderView.swift */; };
+		045B3AC621989E3500C1543F /* Рулевой_мех.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045B3AC521989E3500C1543F /* Рулевой_мех.jpg */; };
+		045DB31721998579006FE340 /* SparePartReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DB31621998579006FE340 /* SparePartReportCell.swift */; };
+		0473179C2180839F0041DE12 /* SelectedItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */; };
+		0473179E21808C410041DE12 /* SelectedItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */; };
+		CE1B683421B70BB60036EFAF /* MenuForPartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */; };
+		CE1B683621B70DEB0036EFAF /* MenuForPartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */; };
+		CE1D294021B1AF8C00FCEF60 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D293F21B1AF8C00FCEF60 /* MenuBar.swift */; };
+		CE42290221AC7E7F0029D9E2 /* CarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42290121AC7E7F0029D9E2 /* CarDetailCell.swift */; };
+		CE4BFE8521A724CA0064F294 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BFE8421A724CA0064F294 /* CarDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		040361C92147AFCE00AF567D /* GazelleCosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GazelleCosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		040361CC2147AFCE00AF567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		040361D12147AFCE00AF567D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		040361D42147AFCE00AF567D /* GazelleCosts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GazelleCosts.xcdatamodel; sourceTree = "<group>"; };
+		040361D62147AFD000AF567D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		040361D92147AFD000AF567D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		040361DB2147AFD000AF567D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040361E12147B0B400AF567D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0415DE2F219610F900908DC1 /* SparePartsReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartsReportViewController.swift; sourceTree = "<group>"; };
+		043D24F12195922B00742D69 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
+		0440817A21774C4A0058CC6A /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
+		0440817D21775BBC0058CC6A /* Амортизаторы.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Амортизаторы.jpg"; sourceTree = "<group>"; };
+		0440817E21775BBC0058CC6A /* Барабан_тормозной.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Барабан_тормозной.jpg"; sourceTree = "<group>"; };
+		0440817F21775BBC0058CC6A /* Бендекс.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Бендекс.jpg"; sourceTree = "<group>"; };
+		0440818021775BBC0058CC6A /* Бензонасос_электро.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Бензонасос_электро.jpg"; sourceTree = "<group>"; };
+		0440818121775BBC0058CC6A /* Болт_ресоры.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Болт_ресоры.jpg"; sourceTree = "<group>"; };
+		0440818221775BBC0058CC6A /* Болты_кардана.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Болты_кардана.jpg"; sourceTree = "<group>"; };
+		0440818321775BBC0058CC6A /* Венец_маховика.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Венец_маховика.jpg"; sourceTree = "<group>"; };
+		0440818421775BBC0058CC6A /* Вилка_сцепления.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Вилка_сцепления.jpg"; sourceTree = "<group>"; };
+		0440818521775BBC0058CC6A /* Втулка_амортизатора.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Втулка_амортизатора.jpg"; sourceTree = "<group>"; };
+		0440818621775BBC0058CC6A /* Втулки_клапвнов.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Втулки_клапвнов.jpg"; sourceTree = "<group>"; };
+		0440818721775BBC0058CC6A /* Втягивающее_реле.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Втягивающее_реле.jpg"; sourceTree = "<group>"; };
+		0440818821775BBC0058CC6A /* Выжимной_подшибник.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Выжимной_подшибник.jpg"; sourceTree = "<group>"; };
+		0440818921775BBC0058CC6A /* Генератор.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Генератор.jpg"; sourceTree = "<group>"; };
+		0440818A21775BBC0058CC6A /* Главная_пара.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Главная_пара.jpg"; sourceTree = "<group>"; };
+		0440818B21775BBC0058CC6A /* Главный_целиндр_сцепления.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Главный_целиндр_сцепления.jpg"; sourceTree = "<group>"; };
+		0440818C21775BBC0058CC6A /* Глушитель.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Глушитель.jpg"; sourceTree = "<group>"; };
+		0440818D21775BBC0058CC6A /* Головка_блока_целиндров.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Головка_блока_целиндров.jpg"; sourceTree = "<group>"; };
+		0440818E21775BBC0058CC6A /* Диск_опорный.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Диск_опорный.jpg"; sourceTree = "<group>"; };
+		0440818F21775BBC0058CC6A /* Диск_передний_тормозной.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Диск_передний_тормозной.jpg"; sourceTree = "<group>"; };
+		0440819021775BBC0058CC6A /* Замок_зажигания.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Замок_зажигания.jpg"; sourceTree = "<group>"; };
+		0440819121775BBC0058CC6A /* Карданчик_вала_руля.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Карданчик_вала_руля.jpg"; sourceTree = "<group>"; };
+		0440819221775BBC0058CC6A /* Картер_заднего_моста.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Картер_заднего_моста.jpg"; sourceTree = "<group>"; };
+		0440819321775BBC0058CC6A /* Клапаны_двигателя.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Клапаны_двигателя.jpg"; sourceTree = "<group>"; };
+		0440819421775BBC0058CC6A /* Колдки_тормозные_задние.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Колдки_тормозные_задние.jpg"; sourceTree = "<group>"; };
+		0440819521775BBC0058CC6A /* Колёсный_диск.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Колёсный_диск.jpg"; sourceTree = "<group>"; };
+		0440819621775BBC0058CC6A /* Колодки_тормозные_передние.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Колодки_тормозные_передние.jpg"; sourceTree = "<group>"; };
+		0440819721775BBC0058CC6A /* Кольца_поршневые.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Кольца_поршневые.jpg"; sourceTree = "<group>"; };
+		0440819821775BBC0058CC6A /* Комплект_натяжительного_устройства.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Комплект_натяжительного_устройства.jpg"; sourceTree = "<group>"; };
+		0440819921775BBC0058CC6A /* Крестовина.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Крестовина.jpg"; sourceTree = "<group>"; };
+		0440819A21775BBC0058CC6A /* Лист_ресоры.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Лист_ресоры.jpg"; sourceTree = "<group>"; };
+		0440819B21775BBC0058CC6A /* Насос_системы_охлаждения.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Насос_системы_охлаждения.jpg"; sourceTree = "<group>"; };
+		0440819C21775BBC0058CC6A /* Патрубки_системы_охлаждения.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Патрубки_системы_охлаждения.jpg"; sourceTree = "<group>"; };
+		0440819D21775BBC0058CC6A /* Переключатель_поворотов.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Переключатель_поворотов.jpg"; sourceTree = "<group>"; };
+		0440819E21775BBC0058CC6A /* Подвисной.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Подвисной.jpg"; sourceTree = "<group>"; };
+		0440819F21775BBC0058CC6A /* Подвисной_некст.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Подвисной_некст.jpg"; sourceTree = "<group>"; };
+		044081A021775BBC0058CC6A /* Подушка_двигателя.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Подушка_двигателя.jpg"; sourceTree = "<group>"; };
+		044081A121775BBC0058CC6A /* Полуось_задняя.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Полуось_задняя.jpg"; sourceTree = "<group>"; };
+		044081A221775BBC0058CC6A /* Поршни_двигателя.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Поршни_двигателя.jpg"; sourceTree = "<group>"; };
+		044081A321775BBC0058CC6A /* Провода_высоковольтные.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Провода_высоковольтные.jpg"; sourceTree = "<group>"; };
+		044081A421775BBC0058CC6A /* Прокладка_головки_блока.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Прокладка_головки_блока.jpg"; sourceTree = "<group>"; };
+		044081A521775BBC0058CC6A /* Прокладки_двигателя.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Прокладки_двигателя.jpg"; sourceTree = "<group>"; };
+		044081A621775BBC0058CC6A /* Радиатор_отопителя.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Радиатор_отопителя.jpg"; sourceTree = "<group>"; };
+		044081A721775BBC0058CC6A /* Радиатор_охлаждения.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Радиатор_охлаждения.jpg"; sourceTree = "<group>"; };
+		044081A821775BBC0058CC6A /* Редуктор_заднего_моста.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Редуктор_заднего_моста.jpg"; sourceTree = "<group>"; };
+		044081A921775BBC0058CC6A /* Ремень_генератора.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ремень_генератора.jpg"; sourceTree = "<group>"; };
+		044081AA21775BBC0058CC6A /* Ролик_натяжной_ремня.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ролик_натяжной_ремня.jpg"; sourceTree = "<group>"; };
+		044081AC21775BBC0058CC6A /* Саленблок_ресоры.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Саленблок_ресоры.jpg"; sourceTree = "<group>"; };
+		044081AD21775BBC0058CC6A /* Сальники_клапанов.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Сальники_клапанов.jpg"; sourceTree = "<group>"; };
+		044081AE21775BBC0058CC6A /* Свечи_405.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Свечи_405.jpg"; sourceTree = "<group>"; };
+		044081AF21775BBC0058CC6A /* Свечи_некст.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Свечи_некст.jpg"; sourceTree = "<group>"; };
+		044081B021775BBC0058CC6A /* Серьга_ресоры.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Серьга_ресоры.jpg"; sourceTree = "<group>"; };
+		044081B121775BBC0058CC6A /* Стартер.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Стартер.jpg"; sourceTree = "<group>"; };
+		044081B221775BBC0058CC6A /* Стремянка_зад.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Стремянка_зад.jpg"; sourceTree = "<group>"; };
+		044081B321775BBC0058CC6A /* Стяжной_болт_кардана.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Стяжной_болт_кардана.jpg"; sourceTree = "<group>"; };
+		044081B521775BBC0058CC6A /* Тормозной_целиндр_задний.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Тормозной_целиндр_задний.jpg"; sourceTree = "<group>"; };
+		044081B621775BBC0058CC6A /* Траверса.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Траверса.jpg"; sourceTree = "<group>"; };
+		044081B721775BBC0058CC6A /* Трос_ручника.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Трос_ручника.jpg"; sourceTree = "<group>"; };
+		044081B821775BBC0058CC6A /* Усилитель_тормозной_вакуумный.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Усилитель_тормозной_вакуумный.jpg"; sourceTree = "<group>"; };
+		044081B921775BBC0058CC6A /* Фиксатор_задней_тормозной_колодки.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Фиксатор_задней_тормозной_колодки.jpg"; sourceTree = "<group>"; };
+		044081BA21775BBC0058CC6A /* Фильтр_масляный.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Фильтр_масляный.jpg"; sourceTree = "<group>"; };
+		044081BB21775BBC0058CC6A /* Фланец_заднего_моста.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Фланец_заднего_моста.jpg"; sourceTree = "<group>"; };
+		044081BC21775BBC0058CC6A /* Цилиндр_тормозной_главный.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Цилиндр_тормозной_главный.jpg"; sourceTree = "<group>"; };
+		044081BD21775BBC0058CC6A /* Часть_кардана.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Часть_кардана.jpg"; sourceTree = "<group>"; };
+		044081BE21775BBC0058CC6A /* Шарнир_рулевой.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Шарнир_рулевой.jpg"; sourceTree = "<group>"; };
+		044081BF21775BBC0058CC6A /* Шаровая_опора_верх.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Шаровая_опора_верх.jpg"; sourceTree = "<group>"; };
+		044081C021775BBC0058CC6A /* Шаровая_опора_низ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Шаровая_опора_низ.jpg"; sourceTree = "<group>"; };
+		044081C121775BBC0058CC6A /* Шкворень.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Шкворень.jpg"; sourceTree = "<group>"; };
+		044081C221775BBC0058CC6A /* Шкив_коленного_вала.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Шкив_коленного_вала.jpg"; sourceTree = "<group>"; };
+		044081C321775BBC0058CC6A /* Шкив_помпы.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Шкив_помпы.jpg"; sourceTree = "<group>"; };
+		044081C421775BBC0058CC6A /* Шпилька_колеса.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Шпилька_колеса.jpg"; sourceTree = "<group>"; };
+		044081C521775BBC0058CC6A /* Щётки_генератора.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Щётки_генератора.jpg"; sourceTree = "<group>"; };
+		044081C621775BBC0058CC6A /* Электродвигатель_отопления.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Электродвигатель_отопления.jpg"; sourceTree = "<group>"; };
+		044229F4215399F400433AC5 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		044229F62153B55100433AC5 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		0445732C2170851000A21831 /* Двигатель.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Двигатель.jpg"; sourceTree = "<group>"; };
+		0445732D2170851000A21831 /* Кардан.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Кардан.jpg"; sourceTree = "<group>"; };
+		0445732E2170851000A21831 /* Подвеска.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Подвеска.jpg"; sourceTree = "<group>"; };
+		0445732F2170851000A21831 /* Рулевой_механизм.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Рулевой_механизм.jpg"; sourceTree = "<group>"; };
+		044573302170851000A21831 /* Система_охлаждения.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Система_охлаждения.jpg"; sourceTree = "<group>"; };
+		044573312170851000A21831 /* Сцепление.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Сцепление.jpg"; sourceTree = "<group>"; };
+		044573322170851000A21831 /* Электро_оборудование.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Электро_оборудование.jpg"; sourceTree = "<group>"; };
+		0445733A217095F800A21831 /* PartInCategoriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartInCategoriViewController.swift; sourceTree = "<group>"; };
+		0445733C2170A72100A21831 /* PartCategoriCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCategoriCell.swift; sourceTree = "<group>"; };
+		04463416216CC72F00A8724E /* SparePartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartsCell.swift; sourceTree = "<group>"; };
+		04463418216CD3FE00A8724E /* SparePartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartsViewController.swift; sourceTree = "<group>"; };
+		0457458D21A2BA64000D87FF /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		0457458F21A2BB3F000D87FF /* ExpandebleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandebleHeaderView.swift; sourceTree = "<group>"; };
+		045B3AC521989E3500C1543F /* Рулевой_мех.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Рулевой_мех.jpg"; sourceTree = "<group>"; };
+		045DB31621998579006FE340 /* SparePartReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartReportCell.swift; sourceTree = "<group>"; };
+		0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemsViewController.swift; sourceTree = "<group>"; };
+		0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemsTableViewCell.swift; sourceTree = "<group>"; };
+		CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForPartsCell.swift; sourceTree = "<group>"; };
+		CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForPartsViewController.swift; sourceTree = "<group>"; };
+		CE1D293F21B1AF8C00FCEF60 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		CE42290121AC7E7F0029D9E2 /* CarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailCell.swift; sourceTree = "<group>"; };
+		CE4BFE8421A724CA0064F294 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		040361C62147AFCE00AF567D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040361C02147AFCE00AF567D = {
+			isa = PBXGroup;
+			children = (
+				040361CB2147AFCE00AF567D /* GazelleCosts */,
+				040361CA2147AFCE00AF567D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		040361CA2147AFCE00AF567D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				040361C92147AFCE00AF567D /* GazelleCosts.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		040361CB2147AFCE00AF567D /* GazelleCosts */ = {
+			isa = PBXGroup;
+			children = (
+				040361CC2147AFCE00AF567D /* AppDelegate.swift */,
+				040361D02147AFCE00AF567D /* Main.storyboard */,
+				040361D62147AFD000AF567D /* Assets.xcassets */,
+				040361D82147AFD000AF567D /* LaunchScreen.storyboard */,
+				040361DB2147AFD000AF567D /* Info.plist */,
+				040361E12147B0B400AF567D /* CoreDataManager.swift */,
+				0458F14A2182F8D30085486D /* Controllers */,
+				0458F14B2182F9090085486D /* Views */,
+				0440817C21775BBC0058CC6A /* Parts */,
+				0445732B2170851000A21831 /* Categories */,
+				0458F1492182F8870085486D /* Models */,
+				043D24F12195922B00742D69 /* HelperMethods.swift */,
+			);
+			path = GazelleCosts;
+			sourceTree = "<group>";
+		};
+		0440817C21775BBC0058CC6A /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				045B3AC521989E3500C1543F /* Рулевой_мех.jpg */,
+				0440817D21775BBC0058CC6A /* Амортизаторы.jpg */,
+				0440817E21775BBC0058CC6A /* Барабан_тормозной.jpg */,
+				0440817F21775BBC0058CC6A /* Бендекс.jpg */,
+				0440818021775BBC0058CC6A /* Бензонасос_электро.jpg */,
+				0440818121775BBC0058CC6A /* Болт_ресоры.jpg */,
+				0440818221775BBC0058CC6A /* Болты_кардана.jpg */,
+				0440818321775BBC0058CC6A /* Венец_маховика.jpg */,
+				0440818421775BBC0058CC6A /* Вилка_сцепления.jpg */,
+				0440818521775BBC0058CC6A /* Втулка_амортизатора.jpg */,
+				0440818621775BBC0058CC6A /* Втулки_клапвнов.jpg */,
+				0440818721775BBC0058CC6A /* Втягивающее_реле.jpg */,
+				0440818821775BBC0058CC6A /* Выжимной_подшибник.jpg */,
+				0440818921775BBC0058CC6A /* Генератор.jpg */,
+				0440818A21775BBC0058CC6A /* Главная_пара.jpg */,
+				0440818B21775BBC0058CC6A /* Главный_целиндр_сцепления.jpg */,
+				0440818C21775BBC0058CC6A /* Глушитель.jpg */,
+				0440818D21775BBC0058CC6A /* Головка_блока_целиндров.jpg */,
+				0440818E21775BBC0058CC6A /* Диск_опорный.jpg */,
+				0440818F21775BBC0058CC6A /* Диск_передний_тормозной.jpg */,
+				0440819021775BBC0058CC6A /* Замок_зажигания.jpg */,
+				0440819121775BBC0058CC6A /* Карданчик_вала_руля.jpg */,
+				0440819221775BBC0058CC6A /* Картер_заднего_моста.jpg */,
+				0440819321775BBC0058CC6A /* Клапаны_двигателя.jpg */,
+				0440819421775BBC0058CC6A /* Колдки_тормозные_задние.jpg */,
+				0440819521775BBC0058CC6A /* Колёсный_диск.jpg */,
+				0440819621775BBC0058CC6A /* Колодки_тормозные_передние.jpg */,
+				0440819721775BBC0058CC6A /* Кольца_поршневые.jpg */,
+				0440819821775BBC0058CC6A /* Комплект_натяжительного_устройства.jpg */,
+				0440819921775BBC0058CC6A /* Крестовина.jpg */,
+				0440819A21775BBC0058CC6A /* Лист_ресоры.jpg */,
+				0440819B21775BBC0058CC6A /* Насос_системы_охлаждения.jpg */,
+				0440819C21775BBC0058CC6A /* Патрубки_системы_охлаждения.jpg */,
+				0440819D21775BBC0058CC6A /* Переключатель_поворотов.jpg */,
+				0440819E21775BBC0058CC6A /* Подвисной.jpg */,
+				0440819F21775BBC0058CC6A /* Подвисной_некст.jpg */,
+				044081A021775BBC0058CC6A /* Подушка_двигателя.jpg */,
+				044081A121775BBC0058CC6A /* Полуось_задняя.jpg */,
+				044081A221775BBC0058CC6A /* Поршни_двигателя.jpg */,
+				044081A321775BBC0058CC6A /* Провода_высоковольтные.jpg */,
+				044081A421775BBC0058CC6A /* Прокладка_головки_блока.jpg */,
+				044081A521775BBC0058CC6A /* Прокладки_двигателя.jpg */,
+				044081A621775BBC0058CC6A /* Радиатор_отопителя.jpg */,
+				044081A721775BBC0058CC6A /* Радиатор_охлаждения.jpg */,
+				044081A821775BBC0058CC6A /* Редуктор_заднего_моста.jpg */,
+				044081A921775BBC0058CC6A /* Ремень_генератора.jpg */,
+				044081AA21775BBC0058CC6A /* Ролик_натяжной_ремня.jpg */,
+				044081AC21775BBC0058CC6A /* Саленблок_ресоры.jpg */,
+				044081AD21775BBC0058CC6A /* Сальники_клапанов.jpg */,
+				044081AE21775BBC0058CC6A /* Свечи_405.jpg */,
+				044081AF21775BBC0058CC6A /* Свечи_некст.jpg */,
+				044081B021775BBC0058CC6A /* Серьга_ресоры.jpg */,
+				044081B121775BBC0058CC6A /* Стартер.jpg */,
+				044081B221775BBC0058CC6A /* Стремянка_зад.jpg */,
+				044081B321775BBC0058CC6A /* Стяжной_болт_кардана.jpg */,
+				044081B521775BBC0058CC6A /* Тормозной_целиндр_задний.jpg */,
+				044081B621775BBC0058CC6A /* Траверса.jpg */,
+				044081B721775BBC0058CC6A /* Трос_ручника.jpg */,
+				044081B821775BBC0058CC6A /* Усилитель_тормозной_вакуумный.jpg */,
+				044081B921775BBC0058CC6A /* Фиксатор_задней_тормозной_колодки.jpg */,
+				044081BA21775BBC0058CC6A /* Фильтр_масляный.jpg */,
+				044081BB21775BBC0058CC6A /* Фланец_заднего_моста.jpg */,
+				044081BC21775BBC0058CC6A /* Цилиндр_тормозной_главный.jpg */,
+				044081BD21775BBC0058CC6A /* Часть_кардана.jpg */,
+				044081BE21775BBC0058CC6A /* Шарнир_рулевой.jpg */,
+				044081BF21775BBC0058CC6A /* Шаровая_опора_верх.jpg */,
+				044081C021775BBC0058CC6A /* Шаровая_опора_низ.jpg */,
+				044081C121775BBC0058CC6A /* Шкворень.jpg */,
+				044081C221775BBC0058CC6A /* Шкив_коленного_вала.jpg */,
+				044081C321775BBC0058CC6A /* Шкив_помпы.jpg */,
+				044081C421775BBC0058CC6A /* Шпилька_колеса.jpg */,
+				044081C521775BBC0058CC6A /* Щётки_генератора.jpg */,
+				044081C621775BBC0058CC6A /* Электродвигатель_отопления.jpg */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		0445732B2170851000A21831 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0445732C2170851000A21831 /* Двигатель.jpg */,
+				0445732D2170851000A21831 /* Кардан.jpg */,
+				0445732E2170851000A21831 /* Подвеска.jpg */,
+				0445732F2170851000A21831 /* Рулевой_механизм.jpg */,
+				044573302170851000A21831 /* Система_охлаждения.jpg */,
+				044573312170851000A21831 /* Сцепление.jpg */,
+				044573322170851000A21831 /* Электро_оборудование.jpg */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		0458F1492182F8870085486D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0440817A21774C4A0058CC6A /* InitialData.swift */,
+				040361D32147AFCE00AF567D /* GazelleCosts.xcdatamodeld */,
+				0457458D21A2BA64000D87FF /* Section.swift */,
+				0457458F21A2BB3F000D87FF /* ExpandebleHeaderView.swift */,
+				CE1D293F21B1AF8C00FCEF60 /* MenuBar.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0458F14A2182F8D30085486D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				044229F4215399F400433AC5 /* CarViewController.swift */,
+				CE4BFE8421A724CA0064F294 /* CarDetailViewController.swift */,
+				04463418216CD3FE00A8724E /* SparePartsViewController.swift */,
+				0445733A217095F800A21831 /* PartInCategoriViewController.swift */,
+				0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */,
+				0415DE2F219610F900908DC1 /* SparePartsReportViewController.swift */,
+				CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0458F14B2182F9090085486D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044229F62153B55100433AC5 /* CarTableViewCell.swift */,
+				04463416216CC72F00A8724E /* SparePartsCell.swift */,
+				0445733C2170A72100A21831 /* PartCategoriCell.swift */,
+				0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */,
+				045DB31621998579006FE340 /* SparePartReportCell.swift */,
+				CE42290121AC7E7F0029D9E2 /* CarDetailCell.swift */,
+				CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		040361C82147AFCE00AF567D /* GazelleCosts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040361DE2147AFD000AF567D /* Build configuration list for PBXNativeTarget "GazelleCosts" */;
+			buildPhases = (
+				040361C52147AFCE00AF567D /* Sources */,
+				040361C62147AFCE00AF567D /* Frameworks */,
+				040361C72147AFCE00AF567D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GazelleCosts;
+			productName = GazelleCosts;
+			productReference = 040361C92147AFCE00AF567D /* GazelleCosts.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		040361C12147AFCE00AF567D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = mac;
+				TargetAttributes = {
+					040361C82147AFCE00AF567D = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 040361C42147AFCE00AF567D /* Build configuration list for PBXProject "GazelleCosts" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 040361C02147AFCE00AF567D;
+			productRefGroup = 040361CA2147AFCE00AF567D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				040361C82147AFCE00AF567D /* GazelleCosts */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		040361C72147AFCE00AF567D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044081D721775BBC0058CC6A /* Головка_блока_целиндров.jpg in Resources */,
+				0440820E21775BBD0058CC6A /* Шпилька_колеса.jpg in Resources */,
+				044081D321775BBC0058CC6A /* Генератор.jpg in Resources */,
+				0440820521775BBD0058CC6A /* Фланец_заднего_моста.jpg in Resources */,
+				0440820821775BBD0058CC6A /* Шарнир_рулевой.jpg in Resources */,
+				044081D421775BBC0058CC6A /* Главная_пара.jpg in Resources */,
+				044081DD21775BBC0058CC6A /* Клапаны_двигателя.jpg in Resources */,
+				044081FD21775BBD0058CC6A /* Стяжной_болт_кардана.jpg in Resources */,
+				044081FC21775BBD0058CC6A /* Стремянка_зад.jpg in Resources */,
+				044081E121775BBC0058CC6A /* Кольца_поршневые.jpg in Resources */,
+				0440820621775BBD0058CC6A /* Цилиндр_тормозной_главный.jpg in Resources */,
+				044081DB21775BBC0058CC6A /* Карданчик_вала_руля.jpg in Resources */,
+				044081EF21775BBC0058CC6A /* Прокладки_двигателя.jpg in Resources */,
+				044081E821775BBC0058CC6A /* Подвисной.jpg in Resources */,
+				044573342170851100A21831 /* Кардан.jpg in Resources */,
+				0440820921775BBD0058CC6A /* Шаровая_опора_верх.jpg in Resources */,
+				044081CC21775BBC0058CC6A /* Болты_кардана.jpg in Resources */,
+				044081F921775BBD0058CC6A /* Свечи_некст.jpg in Resources */,
+				044573362170851100A21831 /* Рулевой_механизм.jpg in Resources */,
+				044573372170851100A21831 /* Система_охлаждения.jpg in Resources */,
+				044081D921775BBC0058CC6A /* Диск_передний_тормозной.jpg in Resources */,
+				044081D021775BBC0058CC6A /* Втулки_клапвнов.jpg in Resources */,
+				040361DA2147AFD000AF567D /* LaunchScreen.storyboard in Resources */,
+				044081E921775BBC0058CC6A /* Подвисной_некст.jpg in Resources */,
+				044081FA21775BBD0058CC6A /* Серьга_ресоры.jpg in Resources */,
+				044573352170851100A21831 /* Подвеска.jpg in Resources */,
+				0440821021775BBD0058CC6A /* Электродвигатель_отопления.jpg in Resources */,
+				044081D121775BBC0058CC6A /* Втягивающее_реле.jpg in Resources */,
+				044081F021775BBC0058CC6A /* Радиатор_отопителя.jpg in Resources */,
+				040361D72147AFD000AF567D /* Assets.xcassets in Resources */,
+				044081F221775BBC0058CC6A /* Редуктор_заднего_моста.jpg in Resources */,
+				0440820C21775BBD0058CC6A /* Шкив_коленного_вала.jpg in Resources */,
+				044081CF21775BBC0058CC6A /* Втулка_амортизатора.jpg in Resources */,
+				044081CD21775BBC0058CC6A /* Венец_маховика.jpg in Resources */,
+				044081CB21775BBC0058CC6A /* Болт_ресоры.jpg in Resources */,
+				044081DC21775BBC0058CC6A /* Картер_заднего_моста.jpg in Resources */,
+				044081E021775BBC0058CC6A /* Колодки_тормозные_передние.jpg in Resources */,
+				0440820121775BBD0058CC6A /* Трос_ручника.jpg in Resources */,
+				044081ED21775BBC0058CC6A /* Провода_высоковольтные.jpg in Resources */,
+				0440820221775BBD0058CC6A /* Усилитель_тормозной_вакуумный.jpg in Resources */,
+				044081D221775BBC0058CC6A /* Выжимной_подшибник.jpg in Resources */,
+				0440820021775BBD0058CC6A /* Траверса.jpg in Resources */,
+				0440820721775BBD0058CC6A /* Часть_кардана.jpg in Resources */,
+				044081E721775BBC0058CC6A /* Переключатель_поворотов.jpg in Resources */,
+				044081D621775BBC0058CC6A /* Глушитель.jpg in Resources */,
+				044081CA21775BBC0058CC6A /* Бензонасос_электро.jpg in Resources */,
+				044081F821775BBD0058CC6A /* Свечи_405.jpg in Resources */,
+				044081F621775BBC0058CC6A /* Саленблок_ресоры.jpg in Resources */,
+				044081F121775BBC0058CC6A /* Радиатор_охлаждения.jpg in Resources */,
+				044081DE21775BBC0058CC6A /* Колдки_тормозные_задние.jpg in Resources */,
+				044081FF21775BBD0058CC6A /* Тормозной_целиндр_задний.jpg in Resources */,
+				044081FB21775BBD0058CC6A /* Стартер.jpg in Resources */,
+				044081C721775BBC0058CC6A /* Амортизаторы.jpg in Resources */,
+				044081E421775BBC0058CC6A /* Лист_ресоры.jpg in Resources */,
+				0440820321775BBD0058CC6A /* Фиксатор_задней_тормозной_колодки.jpg in Resources */,
+				044081F421775BBC0058CC6A /* Ролик_натяжной_ремня.jpg in Resources */,
+				044081EC21775BBC0058CC6A /* Поршни_двигателя.jpg in Resources */,
+				044081E521775BBC0058CC6A /* Насос_системы_охлаждения.jpg in Resources */,
+				044081CE21775BBC0058CC6A /* Вилка_сцепления.jpg in Resources */,
+				0440820F21775BBD0058CC6A /* Щётки_генератора.jpg in Resources */,
+				044081F721775BBC0058CC6A /* Сальники_клапанов.jpg in Resources */,
+				040361D22147AFCE00AF567D /* Main.storyboard in Resources */,
+				044081DA21775BBC0058CC6A /* Замок_зажигания.jpg in Resources */,
+				044081D521775BBC0058CC6A /* Главный_целиндр_сцепления.jpg in Resources */,
+				044573382170851100A21831 /* Сцепление.jpg in Resources */,
+				044081DF21775BBC0058CC6A /* Колёсный_диск.jpg in Resources */,
+				0440820B21775BBD0058CC6A /* Шкворень.jpg in Resources */,
+				0440820D21775BBD0058CC6A /* Шкив_помпы.jpg in Resources */,
+				044081F321775BBC0058CC6A /* Ремень_генератора.jpg in Resources */,
+				0440820421775BBD0058CC6A /* Фильтр_масляный.jpg in Resources */,
+				044081EB21775BBC0058CC6A /* Полуось_задняя.jpg in Resources */,
+				044081E321775BBC0058CC6A /* Крестовина.jpg in Resources */,
+				0440820A21775BBD0058CC6A /* Шаровая_опора_низ.jpg in Resources */,
+				044081E221775BBC0058CC6A /* Комплект_натяжительного_устройства.jpg in Resources */,
+				044081D821775BBC0058CC6A /* Диск_опорный.jpg in Resources */,
+				044081C921775BBC0058CC6A /* Бендекс.jpg in Resources */,
+				044081C821775BBC0058CC6A /* Барабан_тормозной.jpg in Resources */,
+				045B3AC621989E3500C1543F /* Рулевой_мех.jpg in Resources */,
+				044573332170851100A21831 /* Двигатель.jpg in Resources */,
+				044081EE21775BBC0058CC6A /* Прокладка_головки_блока.jpg in Resources */,
+				044081E621775BBC0058CC6A /* Патрубки_системы_охлаждения.jpg in Resources */,
+				044573392170851100A21831 /* Электро_оборудование.jpg in Resources */,
+				044081EA21775BBC0058CC6A /* Подушка_двигателя.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		040361C52147AFCE00AF567D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0457458E21A2BA64000D87FF /* Section.swift in Sources */,
+				0445733B217095F800A21831 /* PartInCategoriViewController.swift in Sources */,
+				044229F5215399F400433AC5 /* CarViewController.swift in Sources */,
+				045DB31721998579006FE340 /* SparePartReportCell.swift in Sources */,
+				CE4BFE8521A724CA0064F294 /* CarDetailViewController.swift in Sources */,
+				CE1D294021B1AF8C00FCEF60 /* MenuBar.swift in Sources */,
+				0415DE30219610F900908DC1 /* SparePartsReportViewController.swift in Sources */,
+				043D24F22195922B00742D69 /* HelperMethods.swift in Sources */,
+				0445733D2170A72100A21831 /* PartCategoriCell.swift in Sources */,
+				CE1B683621B70DEB0036EFAF /* MenuForPartsViewController.swift in Sources */,
+				CE1B683421B70BB60036EFAF /* MenuForPartsCell.swift in Sources */,
+				040361D52147AFCE00AF567D /* GazelleCosts.xcdatamodeld in Sources */,
+				0440817B21774C4A0058CC6A /* InitialData.swift in Sources */,
+				04463417216CC72F00A8724E /* SparePartsCell.swift in Sources */,
+				CE42290221AC7E7F0029D9E2 /* CarDetailCell.swift in Sources */,
+				0473179C2180839F0041DE12 /* SelectedItemsViewController.swift in Sources */,
+				040361E22147B0B400AF567D /* CoreDataManager.swift in Sources */,
+				04463419216CD3FE00A8724E /* SparePartsViewController.swift in Sources */,
+				040361CD2147AFCE00AF567D /* AppDelegate.swift in Sources */,
+				0457459021A2BB3F000D87FF /* ExpandebleHeaderView.swift in Sources */,
+				0473179E21808C410041DE12 /* SelectedItemsTableViewCell.swift in Sources */,
+				044229F72153B55100433AC5 /* CarTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		040361D02147AFCE00AF567D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040361D12147AFCE00AF567D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		040361D82147AFD000AF567D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040361D92147AFD000AF567D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		040361DC2147AFD000AF567D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		040361DD2147AFD000AF567D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		040361DF2147AFD000AF567D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 364PACBHLP;
+				INFOPLIST_FILE = GazelleCosts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Efimenko.GazelleCosts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		040361E02147AFD000AF567D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 364PACBHLP;
+				INFOPLIST_FILE = GazelleCosts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Efimenko.GazelleCosts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		040361C42147AFCE00AF567D /* Build configuration list for PBXProject "GazelleCosts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040361DC2147AFD000AF567D /* Debug */,
+				040361DD2147AFD000AF567D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040361DE2147AFD000AF567D /* Build configuration list for PBXNativeTarget "GazelleCosts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040361DF2147AFD000AF567D /* Debug */,
+				040361E02147AFD000AF567D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		040361D32147AFCE00AF567D /* GazelleCosts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				040361D42147AFCE00AF567D /* GazelleCosts.xcdatamodel */,
+			);
+			currentVersion = 040361D42147AFCE00AF567D /* GazelleCosts.xcdatamodel */;
+			path = GazelleCosts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 040361C12147AFCE00AF567D /* Project object */;
+}
