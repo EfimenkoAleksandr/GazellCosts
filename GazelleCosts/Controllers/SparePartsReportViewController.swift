@@ -66,13 +66,37 @@ extension SparePartsReportViewController: UITableViewDataSource, UITableViewDele
         let masivMCP = self.masivChoiceParts[indexPath.section]
         let masiv = masivMCP.forSaveCP?.allObjects as! [ForSaveChoisePart]
         let choisePart = masiv[indexPath.row]
-        
-        cell.nameLabel.text = choisePart.name
-        cell.countLabel.text = choisePart.count
-        cell.priceLabel.text = choisePart.price
+  
+        if masiv[indexPath.row].seller == "v" {
+           cell.nameLabel.text = choisePart.name
+           cell.countLabel.text = choisePart.count
+           cell.priceLabel.text = choisePart.price
+           cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        }
+        if masiv[indexPath.row].seller == "l" {
+            cell.nameLabel.text = choisePart.name
+            cell.countLabel.text = choisePart.count
+            cell.priceLabel.text = choisePart.price
+            cell.backgroundColor = #colorLiteral(red: 0.9091644832, green: 1, blue: 0.5699023115, alpha: 1)
+        }
         
         return cell
     }
+    
+//    if masiv[indexPath.row].seller == "v" {
+//    let choisePart = masiv[indexPath.row]
+//    //if choisePart.seller == "v" {
+//    cell.nameLabel.text = choisePart.name
+//    cell.countLabel.text = choisePart.count
+//    cell.priceLabel.text = choisePart.price
+//    //}
+//    }
+//    //        cell.nameLabel.text = choisePart.name
+//    //        cell.countLabel.text = choisePart.count
+//    //        cell.priceLabel.text = choisePart.price
+//    //        cell.backgroundColor = .red
+//
+//    return cell
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
