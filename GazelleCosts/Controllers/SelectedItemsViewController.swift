@@ -21,7 +21,7 @@ class SelectedItemsViewController: UIViewController {
         
         self.clearChoiceOutlet.isEnabled = false
         self.saveChoiceOutlet.isEnabled = false
-    
+        
         if let coicePartNoNill = CoreDataManager.sharedManager.fetchAllChoisePart() {
             self.choiceParts = coicePartNoNill
         }
@@ -35,21 +35,27 @@ class SelectedItemsViewController: UIViewController {
         title = "Choice parts"
         self.selectedItemsTableView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
         self.selectedItemsTableView.separatorStyle = .none
+        
+        self.saveChoiceOutlet.layer.cornerRadius = 10
+        self.clearChoiceOutlet.layer.cornerRadius = 10
+       
+       HelperMethods.shared.setBackGround(view: self.view, tableView: self.selectedItemsTableView)
     }
     
     @IBAction func saveChoise(_ sender: UIButton) {
-            
+        DispatchQueue.global(qos: .utility).async {
         CoreDataManager.sharedManager.saveMasivChoiseParts(masiv: self.choiceParts)
-        
+        }
     }
     
     @IBAction func clearChoise(_ sender: UIButton) {
-        CoreDataManager.sharedManager.deleteAllChoisePart()
+        DispatchQueue.main.async {
+        CoreDataManager.sharedManager.deleteAllChoisePart()            
         self.choiceParts = CoreDataManager.sharedManager.fetchAllChoisePart()
         self.saveChoiceOutlet.isEnabled = false
         self.clearChoiceOutlet.isEnabled = false
         self.selectedItemsTableView.reloadData()
-        
+        }
     }
 }
 
@@ -68,8 +74,6 @@ extension SelectedItemsViewController: UITableViewDataSource, UITableViewDelegat
         if let image = choiceParts[indexPath.row].name {
         cell.selectedImageView.image = UIImage(named: image + ".jpg")
         }
-        //cell.selectedImageView.layer.cornerRadius = 12.0
-        
         cell.backgroundColor = indexPath.row%2 == 0 ? #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1) : #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         
         return cell
@@ -112,13 +116,6 @@ extension SelectedItemsViewController: UITableViewDataSource, UITableViewDelegat
         alert1.addAction(cancelAction)
         present(alert1, animated: true, completion: nil)
     }
-    
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 5
-//    }
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 5
-//    }
     
 }
 

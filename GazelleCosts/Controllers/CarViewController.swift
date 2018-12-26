@@ -17,10 +17,8 @@ class CarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationController?.navigationBar.setBackgroundImage(UIImage(named: "gray-background"), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .black
-        //navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
                
         carsTableView.dataSource = self
@@ -28,20 +26,15 @@ class CarViewController: UIViewController {
         
         title = "Cars"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"carForBar"), style: .plain, target: self, action: #selector(setupBarButton))
-        self.carsTableView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
-        self.carsTableView.separatorStyle = .none
         
-        if HelperMethods.shared.dateFirstDay() == "01" {
-            let lastMonth = HelperMethods.shared.allMasivChoisePart(masiv: CoreDataManager.sharedManager.fetchAllMasivChoiseParts()!)
-            UserDefaults.standard.set(lastMonth, forKey: "lastMonth")
-            CoreDataManager.sharedManager.deleteAllMasivChoiseParts()
+        DispatchQueue.global(qos: .utility).async {
+            HelperMethods.shared.newMonth()
         }
+        HelperMethods.shared.setBackGround(view: self.view, tableView: self.carsTableView)
         
 //        carsTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
         
     }
-    
-    
     
     @objc func setupBarButton(){
         let alert1 = UIAlertController(title: "Name", message: "Enter name", preferredStyle: UIAlertControllerStyle.alert)
@@ -92,40 +85,6 @@ extension CarViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-
-//    @IBAction func AddCar(_ sender: Any) {
-//
-//        let alert1 = UIAlertController(title: "Name", message: "Enter name", preferredStyle: UIAlertControllerStyle.alert)
-//
-//        alert1.addTextField { (textField) in
-//            textField.placeholder = "name"
-//        }
-//        alert1.addTextField { (textField) in
-//            textField.placeholder = "subname"
-//        }
-//        alert1.addTextField { (textField) in
-//            textField.placeholder = "number"
-//        }
-//
-//        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (action) in
-//            if let nameTextFild = alert1.textFields?[0].text, let subNameTextFild = alert1.textFields?[1].text, let numderTextFild = alert1.textFields?[2].text {
-//               CoreDataManager.sharedManager.saveCar(name: nameTextFild, subName: subNameTextFild, number: numderTextFild)
-//
-//                if let carFetches = CoreDataManager.sharedManager.fetchAllCars() {
-//                    self.cars = carFetches
-//                }
-//                self.carsTableView.reloadData()
-//            }
-//        }
-//        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.cancel, handler: nil)
-//
-//        alert1.addAction(saveAction)
-//        alert1.addAction(cancelAction)
-//        present(alert1, animated: true, completion: nil)
-//        
-//
-//
-//    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 

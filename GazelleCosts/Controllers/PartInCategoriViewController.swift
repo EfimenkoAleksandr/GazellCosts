@@ -25,14 +25,18 @@ class PartInCategoriViewController: UIViewController, UICollectionViewDelegate, 
         partCategoriCollectionView.dataSource = self
         self.partCategoriCollectionView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
         
+        self.setButton()
+    }
+    
+    private func setButton() {
         let button =  UIButton(type: .custom)
         button.setImage(UIImage(named: "icon_right"), for: .normal)
         button.addTarget(self, action: #selector(buttonCreate), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 53, height: 31)//CGRectMake(0, 0, 53, 31)
-        button.imageEdgeInsets = UIEdgeInsetsMake(-1, 32, 1, -32)//move image to the right
-        let label = UILabel(frame: CGRect(x: 3, y: 5, width: 50, height: 20))//CGRectMake(3, 5, 50, 20))
+        button.frame = CGRect(x: 0, y: 0, width: 80, height: 31)//CGRectMake(0, 0, 53, 31)
+        button.imageEdgeInsets = UIEdgeInsetsMake(-1, 32, 1, -32)//move image to the right (-1, 32, 1, -32)
+        let label = UILabel(frame: CGRect(x: 0, y: 5, width: 80, height: 20))//CGRectMake(3, 5, 50, 20))
         label.font = UIFont(name: "Arial-BoldMT", size: 16)
-        label.text = "Home"
+        label.text = "Selected"
         label.textAlignment = .center
         label.textColor = UIColor.black
         label.backgroundColor = UIColor.clear
@@ -42,7 +46,7 @@ class PartInCategoriViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     @objc func buttonCreate() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "Menu") as! MenuForPartsViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SelectedItems") as! SelectedItemsViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -82,7 +86,6 @@ class PartInCategoriViewController: UIViewController, UICollectionViewDelegate, 
         let cardViewFrame = cell.partCategoriImageView.superview?.convert(cell.partCategoriImageView.frame, to: nil)
         let copiOfCardView = UIView(frame: cardViewFrame!)
         copiOfCardView.layer.cornerRadius = 12.0
-        //copiOfCardView.backgroundColor = UIColor.blue
         view.addSubview(copiOfCardView)
         copiOfCardView.backgroundColor = UIColor(patternImage: UIImage(named: name + ".jpg")!)
         

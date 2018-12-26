@@ -13,6 +13,7 @@ class SparePartReportCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var sellerLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

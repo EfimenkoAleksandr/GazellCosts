@@ -34,7 +34,7 @@
         <element name="Car" positionX="-249.26953125" positionY="-238.9765625" width="128" height="120"/>
         <element name="CarDetail" positionX="-36.47265625" positionY="-193.27734375" width="128" height="90"/>
         <element name="ChoicePart" positionX="225.44921875" positionY="-239.24609375" width="128" height="105"/>
-        <element name="ForSaveChoisePart" positionX="38.40625" positionY="43.1015625" width="128" height="120"/>
-        <element name="MasivChoiceParts" positionX="-171.99609375" positionY="48.90625" width="128" height="90"/>
+        <element name="ForSaveChoisePart" positionX="76.3828125" positionY="55.80859375" width="128" height="120"/>
+        <element name="MasivChoiceParts" positionX="-171.99609375" positionY="48.90625" width="128" height="88"/>
     </elements>
 </model>

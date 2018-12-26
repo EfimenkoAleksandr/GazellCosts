@@ -112,6 +112,7 @@
 		CE1D294021B1AF8C00FCEF60 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D293F21B1AF8C00FCEF60 /* MenuBar.swift */; };
 		CE42290221AC7E7F0029D9E2 /* CarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42290121AC7E7F0029D9E2 /* CarDetailCell.swift */; };
 		CE4BFE8521A724CA0064F294 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BFE8421A724CA0064F294 /* CarDetailViewController.swift */; };
+		CEA81B1B21C425F90060EB8A /* SparePartReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA81B1A21C425F90060EB8A /* SparePartReportDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +223,7 @@
 		CE1D293F21B1AF8C00FCEF60 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		CE42290121AC7E7F0029D9E2 /* CarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailCell.swift; sourceTree = "<group>"; };
 		CE4BFE8421A724CA0064F294 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		CEA81B1A21C425F90060EB8A /* SparePartReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartReportDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +387,7 @@
 				0445733A217095F800A21831 /* PartInCategoriViewController.swift */,
 				0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */,
 				0415DE2F219610F900908DC1 /* SparePartsReportViewController.swift */,
+				CEA81B1A21C425F90060EB8A /* SparePartReportDetailViewController.swift */,
 				CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */,
 			);
 			path = Controllers;
@@ -573,6 +576,7 @@
 				0473179C2180839F0041DE12 /* SelectedItemsViewController.swift in Sources */,
 				040361E22147B0B400AF567D /* CoreDataManager.swift in Sources */,
 				04463419216CD3FE00A8724E /* SparePartsViewController.swift in Sources */,
+				CEA81B1B21C425F90060EB8A /* SparePartReportDetailViewController.swift in Sources */,
 				040361CD2147AFCE00AF567D /* AppDelegate.swift in Sources */,
 				0457459021A2BB3F000D87FF /* ExpandebleHeaderView.swift in Sources */,
 				0473179E21808C410041DE12 /* SelectedItemsTableViewCell.swift in Sources */,

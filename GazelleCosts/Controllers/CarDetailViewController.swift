@@ -32,8 +32,7 @@ class CarDetailViewController: UIViewController {
        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"book"), style: .plain, target: self, action: #selector(setupBarButton))
         navigationItem.rightBarButtonItem?.tintColor = .black
-        self.detailCar.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
-        self.detailCar.separatorStyle = .none
+        HelperMethods.shared.setBackGround(view: self.view, tableView: self.detailCar)
         
     }
     
@@ -83,6 +82,10 @@ extension CarDetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateFounding.text = masivCarStr[indexPath.row].dateOfBirth
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

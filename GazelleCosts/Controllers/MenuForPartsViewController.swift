@@ -24,9 +24,7 @@ class MenuForPartsViewController: UIViewController {
         menuForPartsTableView.dataSource = self
         menuForPartsTableView.delegate = self
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "gray-background")!)
-        self.menuForPartsTableView.backgroundColor = .clear
-        self.menuForPartsTableView.separatorStyle = .none
+        HelperMethods.shared.setBackGround(view: self.view, tableView: self.menuForPartsTableView)
 
     }
     

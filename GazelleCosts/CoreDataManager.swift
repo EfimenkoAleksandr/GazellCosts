@@ -387,7 +387,6 @@ class CoreDataManager {
         
         carDetail.setValue(name, forKeyPath: "propertyCar")
         carDetail.setValue(HelperMethods.shared.curentDate(), forKeyPath: "dateOfBirth")
-        print(HelperMethods.shared.dateFirstDay())
         do {
             try managedContext.save()
         } catch let error as NSError {
