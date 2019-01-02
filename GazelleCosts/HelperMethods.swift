@@ -121,4 +121,23 @@ func curentDate() -> String {
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    
+    func findLastPrice(part: String) -> ForSaveChoisePart? {
+        
+        var masivSave = [ForSaveChoisePart]()
+        
+        let masivCP = CoreDataManager.sharedManager.fetchAllMasivChoiseParts()
+        for masiv in masivCP! {
+            let mas = (masiv.forSaveCP?.allObjects)! as! [ForSaveChoisePart]
+            for choiceP in mas {
+                if choiceP.name == part {
+                    
+                    masivSave.append(choiceP)
+                }
+            }
+        }
+        return masivSave.last
+    }
+    
 }

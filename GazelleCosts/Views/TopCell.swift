@@ -10,7 +10,13 @@ import UIKit
 
 class TopCell: UITableViewCell {
 
-    override func awakeFromNib() {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var manufakturerLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var sellerLabel: UILabel!
+    
+    
+        override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -20,5 +26,7 @@ class TopCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+
 
 }

@@ -107,6 +107,8 @@
 		045DB31721998579006FE340 /* SparePartReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DB31621998579006FE340 /* SparePartReportCell.swift */; };
 		0473179C2180839F0041DE12 /* SelectedItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */; };
 		0473179E21808C410041DE12 /* SelectedItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */; };
+		CE143B3B21D558E100296B67 /* TopOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE143B3A21D558E100296B67 /* TopOfferViewController.swift */; };
+		CE148E4B21D69D77003F1278 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE148E4A21D69D77003F1278 /* TopCell.swift */; };
 		CE1B683421B70BB60036EFAF /* MenuForPartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */; };
 		CE1B683621B70DEB0036EFAF /* MenuForPartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */; };
 		CE1D294021B1AF8C00FCEF60 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D293F21B1AF8C00FCEF60 /* MenuBar.swift */; };
@@ -218,6 +220,8 @@
 		045DB31621998579006FE340 /* SparePartReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartReportCell.swift; sourceTree = "<group>"; };
 		0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemsViewController.swift; sourceTree = "<group>"; };
 		0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemsTableViewCell.swift; sourceTree = "<group>"; };
+		CE143B3A21D558E100296B67 /* TopOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOfferViewController.swift; sourceTree = "<group>"; };
+		CE148E4A21D69D77003F1278 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForPartsCell.swift; sourceTree = "<group>"; };
 		CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForPartsViewController.swift; sourceTree = "<group>"; };
 		CE1D293F21B1AF8C00FCEF60 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 				0415DE2F219610F900908DC1 /* SparePartsReportViewController.swift */,
 				CEA81B1A21C425F90060EB8A /* SparePartReportDetailViewController.swift */,
 				CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */,
+				CE143B3A21D558E100296B67 /* TopOfferViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				045DB31621998579006FE340 /* SparePartReportCell.swift */,
 				CE42290121AC7E7F0029D9E2 /* CarDetailCell.swift */,
 				CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */,
+				CE148E4A21D69D77003F1278 /* TopCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				0457458E21A2BA64000D87FF /* Section.swift in Sources */,
 				0445733B217095F800A21831 /* PartInCategoriViewController.swift in Sources */,
 				044229F5215399F400433AC5 /* CarViewController.swift in Sources */,
+				CE148E4B21D69D77003F1278 /* TopCell.swift in Sources */,
 				045DB31721998579006FE340 /* SparePartReportCell.swift in Sources */,
 				CE4BFE8521A724CA0064F294 /* CarDetailViewController.swift in Sources */,
 				CE1D294021B1AF8C00FCEF60 /* MenuBar.swift in Sources */,
@@ -577,6 +584,7 @@
 				040361E22147B0B400AF567D /* CoreDataManager.swift in Sources */,
 				04463419216CD3FE00A8724E /* SparePartsViewController.swift in Sources */,
 				CEA81B1B21C425F90060EB8A /* SparePartReportDetailViewController.swift in Sources */,
+				CE143B3B21D558E100296B67 /* TopOfferViewController.swift in Sources */,
 				040361CD2147AFCE00AF567D /* AppDelegate.swift in Sources */,
 				0457459021A2BB3F000D87FF /* ExpandebleHeaderView.swift in Sources */,
 				0473179E21808C410041DE12 /* SelectedItemsTableViewCell.swift in Sources */,

@@ -207,7 +207,7 @@ class CoreDataManager {
         
     }
     
-    func saveChoicePart(name: String, count: String, price: String, seller: String) {
+    func saveChoicePart(name: String, count: String, price: String, seller: String, manufacturer: String) {
         
         let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "ChoicePart", in: managedContext)!
@@ -218,6 +218,7 @@ class CoreDataManager {
         choicePart.setValue(count, forKeyPath: "count")
         choicePart.setValue(price, forKey: "price")
         choicePart.setValue(seller, forKey: "seller")
+        choicePart.setValue(manufacturer, forKey: "manufacturer")
         
         do {
             try managedContext.save()
@@ -227,16 +228,14 @@ class CoreDataManager {
         }
     }
     
-    func updateChoisePart(count: String, price : String, seller: String, choisePart : ChoicePart) {
+    func updateChoisePart(count: String, price : String, seller: String, manufacturer: String, choicePart : ChoicePart) {
         
         let context = CoreDataManager.sharedManager.persistentContainer.viewContext
         
-        choisePart.setValue(count, forKey: "count")
-        choisePart.setValue(price, forKey: "price")
-        choisePart.setValue(seller, forKey: "seller")
-        
-//        print("\(String(describing: choisePart.value(forKey: "name")))")
-//        print("\(String(describing: choisePart.value(forKey: "price")))")
+        choicePart.setValue(count, forKey: "count")
+        choicePart.setValue(price, forKey: "price")
+        choicePart.setValue(seller, forKey: "seller")
+        choicePart.setValue(manufacturer, forKey: "manufacturer")
         
         do {
             try context.save()
@@ -315,10 +314,11 @@ class CoreDataManager {
             let entity = NSEntityDescription.entity(forEntityName: "ForSaveChoisePart", in: managedContext)!
             let forChoicePart = NSManagedObject(entity: entity, insertInto: managedContext)
 
-            forChoicePart.setValue(choicePart.name!, forKeyPath: "name")
-            forChoicePart.setValue(choicePart.count!, forKeyPath: "count")
-            forChoicePart.setValue(choicePart.price!, forKey: "price")
+            forChoicePart.setValue(choicePart.name, forKeyPath: "name")
+            forChoicePart.setValue(choicePart.count, forKeyPath: "count")
+            forChoicePart.setValue(choicePart.price, forKey: "price")
             forChoicePart.setValue(choicePart.seller, forKey: "seller")
+            forChoicePart.setValue(choicePart.manufacturer, forKey: "manufacturer")
 
             masivCP?.addToForSaveCP(forChoicePart as! ForSaveChoisePart)
             

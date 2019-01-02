@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="class">
         <attribute name="masivPropertys" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,12 +14,14 @@
     </entity>
     <entity name="ChoicePart" representedClassName="ChoicePart" syncable="YES" codeGenerationType="class">
         <attribute name="count" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" customClassName="[ChoisePart]" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seller" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="ForSaveChoisePart" representedClassName="ForSaveChoisePart" syncable="YES" codeGenerationType="class">
         <attribute name="count" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seller" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,8 +35,8 @@
     <elements>
         <element name="Car" positionX="-249.26953125" positionY="-238.9765625" width="128" height="120"/>
         <element name="CarDetail" positionX="-36.47265625" positionY="-193.27734375" width="128" height="90"/>
-        <element name="ChoicePart" positionX="225.44921875" positionY="-239.24609375" width="128" height="105"/>
-        <element name="ForSaveChoisePart" positionX="76.3828125" positionY="55.80859375" width="128" height="120"/>
+        <element name="ChoicePart" positionX="225.44921875" positionY="-239.24609375" width="128" height="120"/>
+        <element name="ForSaveChoisePart" positionX="76.3828125" positionY="55.80859375" width="128" height="135"/>
         <element name="MasivChoiceParts" positionX="-171.99609375" positionY="48.90625" width="128" height="88"/>
     </elements>
 </model>

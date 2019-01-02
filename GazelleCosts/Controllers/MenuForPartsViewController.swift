@@ -12,7 +12,7 @@ class MenuForPartsViewController: UIViewController {
 
     @IBOutlet weak var menuForPartsTableView: UITableView!
     
-    let menus = ["Запчасти","Выбранные запчасти","Отчёты по запчастям"]
+    let menus = ["Запчасти", "Выбранные запчасти", "Отчёты по запчастям", "Лучшее предложение"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

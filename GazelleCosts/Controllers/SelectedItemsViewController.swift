@@ -22,8 +22,8 @@ class SelectedItemsViewController: UIViewController {
         self.clearChoiceOutlet.isEnabled = false
         self.saveChoiceOutlet.isEnabled = false
         
-        if let coicePartNoNill = CoreDataManager.sharedManager.fetchAllChoisePart() {
-            self.choiceParts = coicePartNoNill
+        if let choicePartNoNill = CoreDataManager.sharedManager.fetchAllChoisePart() {
+            self.choiceParts = choicePartNoNill
         }
         if self.choiceParts.count > 0 {
             self.saveChoiceOutlet.isEnabled = true
@@ -90,9 +90,9 @@ extension SelectedItemsViewController: UITableViewDataSource, UITableViewDelegat
         self.changePart(indexPath.row)
     }
     
-    func changePart( _ indexPasrt: Int) {
+    func changePart( _ indexPath: Int) {
 
-        let alert1 = UIAlertController(title: "Part", message: self.choiceParts[indexPasrt].name, preferredStyle: UIAlertControllerStyle.alert)
+        let alert1 = UIAlertController(title: "Part", message: self.choiceParts[indexPath].name, preferredStyle: UIAlertControllerStyle.alert)
 
         alert1.addTextField { (textField) in
             textField.placeholder = "count"
@@ -103,10 +103,13 @@ extension SelectedItemsViewController: UITableViewDataSource, UITableViewDelegat
         alert1.addTextField { (textField) in
             textField.placeholder = "seller"
         }
+        alert1.addTextField { (textField) in
+            textField.placeholder = "manufacturer"
+        }
 
         let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (action) in
-            if let countTextFild = alert1.textFields?[0].text, let priceTextFild = alert1.textFields?[1].text, let sellerTextFild = alert1.textFields?[2].text {
-                CoreDataManager.sharedManager.updateChoisePart(count: countTextFild, price: priceTextFild, seller: sellerTextFild, choisePart: self.choiceParts[indexPasrt])
+            if let countTextFild = alert1.textFields?[0].text, let priceTextFild = alert1.textFields?[1].text, let sellerTextFild = alert1.textFields?[2].text, let manufacturerTextFild = alert1.textFields?[3].text {
+                CoreDataManager.sharedManager.updateChoisePart(count: countTextFild, price: priceTextFild, seller: sellerTextFild, manufacturer: manufacturerTextFild, choicePart: self.choiceParts[indexPath])
                 }
                 self.selectedItemsTableView.reloadData()
             }

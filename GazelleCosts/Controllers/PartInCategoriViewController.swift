@@ -79,7 +79,7 @@ class PartInCategoriViewController: UIViewController, UICollectionViewDelegate, 
                 return
             }
         }
-        CoreDataManager.sharedManager.saveChoicePart(name: name, count: "1", price: "0", seller: "UncnownSeller")
+        CoreDataManager.sharedManager.saveChoicePart(name: name, count: "1", price: "0", seller: "UncnownSeller", manufacturer: "Other")
         
         guard let cell = partCategoriCollectionView.cellForItem(at: indexPath) as? PartCategoriCell else { return }
         
