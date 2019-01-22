@@ -24,10 +24,12 @@ class SparePartsReportViewController: UIViewController, ExpandebleHeaderViewDele
       
         if let masivCP = CoreDataManager.sharedManager.fetchAllMasivChoiseParts() {
             self.masivChoiceParts = masivCP
+            self.masivChoiceParts = self.masivChoiceParts.sorted(by: { (first: MasivChoiceParts, second: MasivChoiceParts) -> Bool in
+                first.dateCreation! > second.dateCreation! } )
         }
         reportTableView.dataSource = self
         reportTableView.delegate = self
-        self.reportTableView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
+        //self.reportTableView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
         self.reportTableView.separatorStyle = .none
         self.setunNavBar()
         
@@ -152,7 +154,7 @@ extension SparePartsReportViewController: UITableViewDataSource, UITableViewDele
         
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         CoreDataManager.sharedManager.deleteMasivChoiseParts(self.masivChoiceParts[indexPath.section])
         self.masivChoiceParts = CoreDataManager.sharedManager.fetchAllMasivChoiseParts()!
         reportTableView.reloadData()

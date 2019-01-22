@@ -12,10 +12,11 @@ class MenuForPartsViewController: UIViewController {
 
     @IBOutlet weak var menuForPartsTableView: UITableView!
     
-    let menus = ["Запчасти", "Выбранные запчасти", "Отчёты по запчастям", "Лучшее предложение"]
+    let menus = ["Запчасти", "Выбранные запчасти", "Отчёты по запчастям", "Последняя цена"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.menuForPartsTableView.isScrollEnabled = false
         
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .black

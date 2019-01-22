@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class CarViewController: UIViewController {
     
@@ -36,8 +37,31 @@ class CarViewController: UIViewController {
         
     }
     
+//    private func saveMyCar() {
+//
+//        for curentCar in self.cars {
+//            let car = PFObject(className:"Car")
+//            car["name"] = curentCar.name
+//            car["subName"] = curentCar.subName
+//            car["number"] = curentCar.number
+//
+//            // Saves the new object.
+//            car.saveInBackground {
+//                (success: Bool, error: Error?) in
+//                if (success) {
+//                    // The object has been saved.
+//                    print("saved")
+//                } else {
+//                    // There was a problem, check error.description
+//                }
+//            }
+//        }
+//
+//
+//    }
+    
     @objc func setupBarButton(){
-        let alert1 = UIAlertController(title: "Name", message: "Enter name", preferredStyle: UIAlertControllerStyle.alert)
+        let alert1 = UIAlertController(title: "Name", message: "Enter name", preferredStyle: UIAlertController.Style.alert)
         
         alert1.addTextField { (textField) in
             textField.placeholder = "name"
@@ -49,7 +73,7 @@ class CarViewController: UIViewController {
             textField.placeholder = "number"
         }
         
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (action) in
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default) { (action) in
             if let nameTextFild = alert1.textFields?[0].text, let subNameTextFild = alert1.textFields?[1].text, let numderTextFild = alert1.textFields?[2].text {
                 CoreDataManager.sharedManager.saveCar(name: nameTextFild, subName: subNameTextFild, number: numderTextFild)
                 
@@ -59,7 +83,7 @@ class CarViewController: UIViewController {
                 self.carsTableView.reloadData()
             }
         }
-        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertAction.Style.cancel, handler: nil)
         
         alert1.addAction(saveAction)
         alert1.addAction(cancelAction)
@@ -86,7 +110,7 @@ extension CarViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         CoreDataManager.sharedManager.delete(cars[indexPath.row])
         self.cars = CoreDataManager.sharedManager.fetchAllCars()!
@@ -98,6 +122,7 @@ extension CarViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let carFetches = CoreDataManager.sharedManager.fetchAllCars() {
             self.cars = carFetches
+            //self.saveMyCar()
         }
         
     }

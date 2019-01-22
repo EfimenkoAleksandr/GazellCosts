@@ -18,6 +18,7 @@ class SparePartReportDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.reportDetail.isScrollEnabled = false
         reportDetail.dataSource = self
         reportDetail.delegate = self
         
@@ -59,7 +60,6 @@ class SparePartReportDetailViewController: UIViewController {
         default:
             print("error")
         }
-       // print("Func Calk")
         return rezult
     }
 }
@@ -84,10 +84,8 @@ extension SparePartReportDetailViewController: UITableViewDataSource, UITableVie
             
             DispatchQueue.main.async {
                 cell.detailTextLabel?.text = rezultCalk
-                //print("main.detail")
             }
         }
-       //print("cell \(indexPath.row)")
         return cell
     }
 }

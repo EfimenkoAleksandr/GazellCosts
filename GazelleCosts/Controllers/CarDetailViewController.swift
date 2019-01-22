@@ -50,7 +50,7 @@ class CarDetailViewController: UIViewController {
             
         }
         
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (action) in
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default) { (action) in
             if let propertyTextFild = alert.textFields?[0].text {
                 CoreDataManager.sharedManager.updateCar(property: propertyTextFild, car: self.curentCar)
                 
@@ -60,7 +60,7 @@ class CarDetailViewController: UIViewController {
                 self.detailCar.reloadData()
             }
         }
-        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertAction.Style.cancel, handler: nil)
         
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
@@ -88,7 +88,7 @@ extension CarDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         CoreDataManager.sharedManager.deleteCarDetail(self.masivCarStr[indexPath.row])
         self.masivCarStr = curentCar.carDetail?.allObjects as! [CarDetail]

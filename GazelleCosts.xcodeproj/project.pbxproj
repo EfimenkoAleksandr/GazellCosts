@@ -107,6 +107,8 @@
 		045DB31721998579006FE340 /* SparePartReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DB31621998579006FE340 /* SparePartReportCell.swift */; };
 		0473179C2180839F0041DE12 /* SelectedItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */; };
 		0473179E21808C410041DE12 /* SelectedItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */; };
+		9622FC8AD79E5353DCE8D23D /* Pods_GazelleCosts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70902D2BDEF97C0EC18E47F9 /* Pods_GazelleCosts.framework */; };
+		CE112BED21E25A750041EBD4 /* PopOverForSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE112BEC21E25A750041EBD4 /* PopOverForSelected.swift */; };
 		CE143B3B21D558E100296B67 /* TopOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE143B3A21D558E100296B67 /* TopOfferViewController.swift */; };
 		CE148E4B21D69D77003F1278 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE148E4A21D69D77003F1278 /* TopCell.swift */; };
 		CE1B683421B70BB60036EFAF /* MenuForPartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */; };
@@ -220,6 +222,10 @@
 		045DB31621998579006FE340 /* SparePartReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartReportCell.swift; sourceTree = "<group>"; };
 		0473179B2180839F0041DE12 /* SelectedItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemsViewController.swift; sourceTree = "<group>"; };
 		0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemsTableViewCell.swift; sourceTree = "<group>"; };
+		1B4C96EB30FFE948FFBBFC27 /* Pods-GazelleCosts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GazelleCosts.release.xcconfig"; path = "Pods/Target Support Files/Pods-GazelleCosts/Pods-GazelleCosts.release.xcconfig"; sourceTree = "<group>"; };
+		1D02A2645898C3BE0837BF2E /* Pods-GazelleCosts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GazelleCosts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GazelleCosts/Pods-GazelleCosts.debug.xcconfig"; sourceTree = "<group>"; };
+		70902D2BDEF97C0EC18E47F9 /* Pods_GazelleCosts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GazelleCosts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE112BEC21E25A750041EBD4 /* PopOverForSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverForSelected.swift; sourceTree = "<group>"; };
 		CE143B3A21D558E100296B67 /* TopOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOfferViewController.swift; sourceTree = "<group>"; };
 		CE148E4A21D69D77003F1278 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForPartsCell.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9622FC8AD79E5353DCE8D23D /* Pods_GazelleCosts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +253,8 @@
 			children = (
 				040361CB2147AFCE00AF567D /* GazelleCosts */,
 				040361CA2147AFCE00AF567D /* Products */,
+				AD559090674549C3B4EC26EE /* Pods */,
+				37A3589A333CDDAE71816FB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -394,6 +403,7 @@
 				CEA81B1A21C425F90060EB8A /* SparePartReportDetailViewController.swift */,
 				CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */,
 				CE143B3A21D558E100296B67 /* TopOfferViewController.swift */,
+				CE112BEC21E25A750041EBD4 /* PopOverForSelected.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -413,6 +423,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		37A3589A333CDDAE71816FB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70902D2BDEF97C0EC18E47F9 /* Pods_GazelleCosts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD559090674549C3B4EC26EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D02A2645898C3BE0837BF2E /* Pods-GazelleCosts.debug.xcconfig */,
+				1B4C96EB30FFE948FFBBFC27 /* Pods-GazelleCosts.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -420,9 +447,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040361DE2147AFD000AF567D /* Build configuration list for PBXNativeTarget "GazelleCosts" */;
 			buildPhases = (
+				DF3A9DE7A52CD45C2989DDDB /* [CP] Check Pods Manifest.lock */,
 				040361C52147AFCE00AF567D /* Sources */,
 				040361C62147AFCE00AF567D /* Frameworks */,
 				040361C72147AFCE00AF567D /* Resources */,
+				A883EF9939D5F6C852F92BAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -445,6 +474,7 @@
 				TargetAttributes = {
 					040361C82147AFCE00AF567D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -559,6 +589,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A883EF9939D5F6C852F92BAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GazelleCosts/Pods-GazelleCosts-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GazelleCosts/Pods-GazelleCosts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF3A9DE7A52CD45C2989DDDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GazelleCosts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		040361C52147AFCE00AF567D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -570,6 +649,7 @@
 				CE148E4B21D69D77003F1278 /* TopCell.swift in Sources */,
 				045DB31721998579006FE340 /* SparePartReportCell.swift in Sources */,
 				CE4BFE8521A724CA0064F294 /* CarDetailViewController.swift in Sources */,
+				CE112BED21E25A750041EBD4 /* PopOverForSelected.swift in Sources */,
 				CE1D294021B1AF8C00FCEF60 /* MenuBar.swift in Sources */,
 				0415DE30219610F900908DC1 /* SparePartsReportViewController.swift in Sources */,
 				043D24F22195922B00742D69 /* HelperMethods.swift in Sources */,
@@ -730,6 +810,7 @@
 		};
 		040361DF2147AFD000AF567D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D02A2645898C3BE0837BF2E /* Pods-GazelleCosts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -741,13 +822,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Efimenko.GazelleCosts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		040361E02147AFD000AF567D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B4C96EB30FFE948FFBBFC27 /* Pods-GazelleCosts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -759,7 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Efimenko.GazelleCosts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

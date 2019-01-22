@@ -33,7 +33,7 @@ func curentDate() -> String {
         var price = 0
         if let partCalk = parts.forSaveCP?.allObjects {
             for part in partCalk {
-                price += Int((part as! ForSaveChoisePart).price!)!
+                price += (Int((part as! ForSaveChoisePart).price!)! * Int((part as! ForSaveChoisePart).count!)!)
             }
         }
         return price.description
@@ -53,7 +53,7 @@ func curentDate() -> String {
         if let partCalk = part.forSaveCP?.allObjects {
             for part in partCalk {
                 if (part as! ForSaveChoisePart).seller == seller {
-                    price += Int((part as! ForSaveChoisePart).price!)!
+                    price += (Int((part as! ForSaveChoisePart).price!)! * Int((part as! ForSaveChoisePart).count!)!)
                 }
             }
         }

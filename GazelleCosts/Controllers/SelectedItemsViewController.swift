@@ -33,7 +33,7 @@ class SelectedItemsViewController: UIViewController {
         selectedItemsTableView.delegate = self
         
         title = "Choice parts"
-        self.selectedItemsTableView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
+        //self.selectedItemsTableView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
         self.selectedItemsTableView.separatorStyle = .none
         
         self.saveChoiceOutlet.layer.cornerRadius = 10
@@ -79,7 +79,7 @@ extension SelectedItemsViewController: UITableViewDataSource, UITableViewDelegat
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         CoreDataManager.sharedManager.deleteChoisePart(choiceParts[indexPath.row])
         self.choiceParts = CoreDataManager.sharedManager.fetchAllChoisePart()
         self.selectedItemsTableView.reloadData()
@@ -87,12 +87,14 @@ extension SelectedItemsViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.changePart(indexPath.row)
+
+        self.changePart(indexPath)
+        //self.tapped(indexPath)
     }
     
-    func changePart( _ indexPath: Int) {
+    func changePart( _ indexPath: IndexPath) {
 
-        let alert1 = UIAlertController(title: "Part", message: self.choiceParts[indexPath].name, preferredStyle: UIAlertControllerStyle.alert)
+        let alert1 = UIAlertController(title: "Part", message: self.choiceParts[indexPath.row].name, preferredStyle: UIAlertController.Style.alert)
 
         alert1.addTextField { (textField) in
             textField.placeholder = "count"
@@ -106,21 +108,57 @@ extension SelectedItemsViewController: UITableViewDataSource, UITableViewDelegat
         alert1.addTextField { (textField) in
             textField.placeholder = "manufacturer"
         }
-
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (action) in
-            if let countTextFild = alert1.textFields?[0].text, let priceTextFild = alert1.textFields?[1].text, let sellerTextFild = alert1.textFields?[2].text, let manufacturerTextFild = alert1.textFields?[3].text {
-                CoreDataManager.sharedManager.updateChoisePart(count: countTextFild, price: priceTextFild, seller: sellerTextFild, manufacturer: manufacturerTextFild, choicePart: self.choiceParts[indexPath])
+        
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default) { (action) in
+            if let countTextFild = alert1.textFields?[0].text, let priceTextFild = alert1.textFields?[1].text, let manufacturerTextFild = alert1.textFields?[3].text  {
+//                    CoreDataManager.sharedManager.updateChoisePart(count: countTextFild, price: priceTextFild, seller: sellerTextFild, manufacturer: manufacturerTextFild, choicePart: self.choiceParts[indexPath.row])
+                if alert1.textFields?[2].text == "v" {
+                    let sellerTextFild = "v"
+                    CoreDataManager.sharedManager.updateChoisePart(count: countTextFild, price: priceTextFild, seller: sellerTextFild, manufacturer: manufacturerTextFild, choicePart: self.choiceParts[indexPath.row])
+                } else if alert1.textFields?[2].text == "l" {
+                    let sellerTextFild = "l"
+                    CoreDataManager.sharedManager.updateChoisePart(count: countTextFild, price: priceTextFild, seller: sellerTextFild, manufacturer: manufacturerTextFild, choicePart: self.choiceParts[indexPath.row])
+                } else {
+                    let sellerTextFild = "other"
+                    CoreDataManager.sharedManager.updateChoisePart(count: countTextFild, price: priceTextFild, seller: sellerTextFild, manufacturer: manufacturerTextFild, choicePart: self.choiceParts[indexPath.row])
                 }
+                }
+                //self.tapped(indexPath)
                 self.selectedItemsTableView.reloadData()
             }
-        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertAction.Style.cancel, handler: nil)
 
         alert1.addAction(saveAction)
         alert1.addAction(cancelAction)
         present(alert1, animated: true, completion: nil)
     }
     
+    // PopOverViewController
+    
+//    private func tapped( _ indexPath: IndexPath) {
+//
+//        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "PopOver") else { return }
+//        popVC.modalPresentationStyle = .popover
+//        let popOverVC  = popVC.popoverPresentationController
+//        popOverVC?.delegate = self
+//        popOverVC?.sourceView = self.selectedItemsTableView.cellForRow(at: indexPath)
+//        popOverVC?.sourceRect = CGRect(x: self.tableView(selectedItemsTableView, cellForRowAt: indexPath).bounds.midX, y: self.tableView(selectedItemsTableView, cellForRowAt: indexPath).bounds.maxY, width: 0, height: 0)
+//        popVC.preferredContentSize = CGSize(width: 200, height: 200)
+//
+//        self.present(popVC, animated: true)
+//
+////        let strName = UserDefaults.standard.value(forKey: "kstrName")
+////        print(strName as! String)
+//    }
+    
 }
+
+//extension SelectedItemsViewController: UIPopoverPresentationControllerDelegate {
+//    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+//        return .none
+//    }
+//
+//}
 
     
 

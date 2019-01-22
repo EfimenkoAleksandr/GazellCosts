@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().tintColor = UIColor.black
         
@@ -37,7 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let myLabelhorizontalConstraint = NSLayoutConstraint(item: statusBarBackgroundView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: statusBarBackgroundView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         //let myLabelverticalConstraint = NSLayoutConstraint(item: statusBarBackgroundView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: statusBarBackgroundView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
         
-
+        let parseConfig = ParseClientConfiguration {
+            $0.applicationId = "xMAtMA2HIhnKAmkAjG04EvV0i8jKljLc7dPae5SW"
+            $0.clientKey = "5RJF9W1dtIiCLMNzDS3XMOUYq4XGlUrXUmVFkxKw"
+            $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: parseConfig)
         
 
         

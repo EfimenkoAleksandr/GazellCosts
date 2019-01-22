@@ -33,7 +33,7 @@ class PartInCategoriViewController: UIViewController, UICollectionViewDelegate, 
         button.setImage(UIImage(named: "icon_right"), for: .normal)
         button.addTarget(self, action: #selector(buttonCreate), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 80, height: 31)//CGRectMake(0, 0, 53, 31)
-        button.imageEdgeInsets = UIEdgeInsetsMake(-1, 32, 1, -32)//move image to the right (-1, 32, 1, -32)
+        button.imageEdgeInsets = UIEdgeInsets.init(top: -1, left: 32, bottom: 1, right: -32)//move image to the right (-1, 32, 1, -32)
         let label = UILabel(frame: CGRect(x: 0, y: 5, width: 80, height: 20))//CGRectMake(3, 5, 50, 20))
         label.font = UIFont(name: "Arial-BoldMT", size: 16)
         label.text = "Selected"
