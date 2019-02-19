@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuForPartsViewController: UIViewController {
-
+    
     @IBOutlet weak var menuForPartsTableView: UITableView!
     
     let menus = ["Запчасти", "Выбранные запчасти", "Отчёты по запчастям", "Последняя цена"]
@@ -26,12 +26,14 @@ class MenuForPartsViewController: UIViewController {
         menuForPartsTableView.delegate = self
         
         HelperMethods.shared.setBackGround(view: self.view, tableView: self.menuForPartsTableView)
-
+        
     }
     
 }
 
 extension MenuForPartsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: UICollectionViewDataSourse
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menus.count
@@ -52,12 +54,14 @@ extension MenuForPartsViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
+    //MARK: UICollectionViewDelegate
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selected = menus[indexPath.row]
         performSegue(withIdentifier: selected, sender: nil)
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

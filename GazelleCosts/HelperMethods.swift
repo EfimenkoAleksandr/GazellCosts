@@ -102,27 +102,6 @@ func curentDate() -> String {
         }
     }
     
-    func setBackGround(view: UIView, tableView: UITableView) {
-        
-        let fon = UIImageView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
-        fon.image = UIImage(named: "gazelBackground")
-        fon.contentMode = .scaleAspectFit
-        tableView.backgroundView = fon
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.clear
-        
-        let color1 = UIColor.init(red: 0.333, green: 0.333, blue: 0.333, alpha: 1).cgColor
-        let color2 = UIColor.init(red: 0.803, green: 0.803, blue: 0.803, alpha: 1).cgColor
-        let color3 = UIColor.init(red: 0.333, green: 0.333, blue: 0.333, alpha: 1).cgColor
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [color1, color2, color3]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
-        view.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    
     func findLastPrice(part: String) -> ForSaveChoisePart? {
         
         var masivSave = [ForSaveChoisePart]()
@@ -140,4 +119,85 @@ func curentDate() -> String {
         return masivSave.last
     }
     
+    //MARK: PopOverForCar
+    
+    func createAlert(title: String, message: String, number: Int, controller: UIViewController) -> UIAlertController {
+        
+        let alert1 = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+        let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { (action) in
+            switch number {
+            case 0:
+                HelperMetodsPars.shared.fetchCar()
+                break
+            case 1:
+                HelperMetodsPars.shared.saveMyCar()
+                break
+            case 2:
+                HelperMetodsPars.shared.deleteCar()
+                break
+            default:
+                print("error")
+            }
+            
+            controller.dismiss(animated: true, completion: nil)
+            
+        }
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel) { (cancel) in
+            controller.dismiss(animated: true, completion: nil)
+        }
+
+        alert1.addAction(okAction)
+        alert1.addAction(cancelAction)
+//        present(alert1, animated: true, completion: nil)
+
+        return alert1
+    }
+    
+    //MARK: SetBackGround
+    
+    func setBackGround(view: UIView, tableView: UITableView) {
+        
+        let fon = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        print("with -----------------------\(view.frame.width)")
+        print("height -----------------------\(view.frame.height)")
+        fon.image = UIImage(named: "gazelBackground")
+        fon.contentMode = .scaleAspectFit
+        tableView.backgroundView = fon
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.clear
+        
+        let color1 = UIColor.init(red: 0.333, green: 0.333, blue: 0.333, alpha: 1).cgColor
+        let color2 = UIColor.init(red: 0.803, green: 0.803, blue: 0.803, alpha: 1).cgColor
+        let color3 = UIColor.init(red: 0.333, green: 0.333, blue: 0.333, alpha: 1).cgColor
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.frame
+        gradientLayer.colors = [color1, color2, color3]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
+        view.layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
+    
+    func createLabel(text: String, cellWidth: CGFloat) -> UILabel {
+    
+    let label = UILabel()
+    label.font = UIFont(name: "Arial-BoldMT", size: 16)
+    label.text = text
+    label.textAlignment = .center
+    label.numberOfLines = 0
+    label.textColor = UIColor.black
+    label.backgroundColor = UIColor.white
+    //cell.addSubview(label)
+    
+    let maxSize = CGSize(width: cellWidth, height: 20)
+    var size = label.sizeThatFits(maxSize)
+    if size.width > cellWidth || size.width > cellWidth - 20 {
+    size.width = cellWidth - 20
+    }
+    
+    label.frame = CGRect(origin: CGPoint(x: 10, y: 0), size: size)
+     
+        return label
+    }
 }

@@ -15,7 +15,7 @@ class SparePartReportDetailViewController: UIViewController {
     var masivChoisePart = [MasivChoiceParts]()
     var masivStrPrice: [String] = []
     var masivStrName = ["Лена", "Вася", "Текущий месяц", "Прошлый месяц Лена", "Прошлый месяц Вася", "Прошлый месяц"]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reportDetail.isScrollEnabled = false
@@ -26,8 +26,10 @@ class SparePartReportDetailViewController: UIViewController {
             self.masivChoisePart = masivCP
         }
         
-       HelperMethods.shared.setBackGround(view: self.view, tableView: self.reportDetail)
+        HelperMethods.shared.setBackGround(view: self.view, tableView: self.reportDetail)
     }
+    
+    //MARK: calck
     
     private func calck(_ number: Int) -> String {
         
@@ -63,8 +65,10 @@ class SparePartReportDetailViewController: UIViewController {
         return rezult
     }
 }
-    
+
 extension SparePartReportDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: UICollectionViewDataSourse
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.masivStrName.count

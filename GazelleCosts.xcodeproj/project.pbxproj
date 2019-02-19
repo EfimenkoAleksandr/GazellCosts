@@ -101,6 +101,7 @@
 		0445733D2170A72100A21831 /* PartCategoriCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445733C2170A72100A21831 /* PartCategoriCell.swift */; };
 		04463417216CC72F00A8724E /* SparePartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04463416216CC72F00A8724E /* SparePartsCell.swift */; };
 		04463419216CD3FE00A8724E /* SparePartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04463418216CD3FE00A8724E /* SparePartsViewController.swift */; };
+		0454308B22032B3D007144E7 /* HelperMetodsPars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454308A22032B3D007144E7 /* HelperMetodsPars.swift */; };
 		0457458E21A2BA64000D87FF /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457458D21A2BA64000D87FF /* Section.swift */; };
 		0457459021A2BB3F000D87FF /* ExpandebleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457458F21A2BB3F000D87FF /* ExpandebleHeaderView.swift */; };
 		045B3AC621989E3500C1543F /* Рулевой_мех.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045B3AC521989E3500C1543F /* Рулевой_мех.jpg */; };
@@ -109,6 +110,7 @@
 		0473179E21808C410041DE12 /* SelectedItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473179D21808C410041DE12 /* SelectedItemsTableViewCell.swift */; };
 		9622FC8AD79E5353DCE8D23D /* Pods_GazelleCosts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70902D2BDEF97C0EC18E47F9 /* Pods_GazelleCosts.framework */; };
 		CE112BED21E25A750041EBD4 /* PopOverForSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE112BEC21E25A750041EBD4 /* PopOverForSelected.swift */; };
+		CE12ADBE2209FE8E007D6B9F /* PopOverForCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12ADBD2209FE8E007D6B9F /* PopOverForCar.swift */; };
 		CE143B3B21D558E100296B67 /* TopOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE143B3A21D558E100296B67 /* TopOfferViewController.swift */; };
 		CE148E4B21D69D77003F1278 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE148E4A21D69D77003F1278 /* TopCell.swift */; };
 		CE1B683421B70BB60036EFAF /* MenuForPartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */; };
@@ -216,6 +218,7 @@
 		0445733C2170A72100A21831 /* PartCategoriCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCategoriCell.swift; sourceTree = "<group>"; };
 		04463416216CC72F00A8724E /* SparePartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartsCell.swift; sourceTree = "<group>"; };
 		04463418216CD3FE00A8724E /* SparePartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartsViewController.swift; sourceTree = "<group>"; };
+		0454308A22032B3D007144E7 /* HelperMetodsPars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMetodsPars.swift; sourceTree = "<group>"; };
 		0457458D21A2BA64000D87FF /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		0457458F21A2BB3F000D87FF /* ExpandebleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandebleHeaderView.swift; sourceTree = "<group>"; };
 		045B3AC521989E3500C1543F /* Рулевой_мех.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Рулевой_мех.jpg"; sourceTree = "<group>"; };
@@ -226,6 +229,7 @@
 		1D02A2645898C3BE0837BF2E /* Pods-GazelleCosts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GazelleCosts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GazelleCosts/Pods-GazelleCosts.debug.xcconfig"; sourceTree = "<group>"; };
 		70902D2BDEF97C0EC18E47F9 /* Pods_GazelleCosts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GazelleCosts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE112BEC21E25A750041EBD4 /* PopOverForSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverForSelected.swift; sourceTree = "<group>"; };
+		CE12ADBD2209FE8E007D6B9F /* PopOverForCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverForCar.swift; sourceTree = "<group>"; };
 		CE143B3A21D558E100296B67 /* TopOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOfferViewController.swift; sourceTree = "<group>"; };
 		CE148E4A21D69D77003F1278 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		CE1B683321B70BB60036EFAF /* MenuForPartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForPartsCell.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				0445732B2170851000A21831 /* Categories */,
 				0458F1492182F8870085486D /* Models */,
 				043D24F12195922B00742D69 /* HelperMethods.swift */,
+				0454308A22032B3D007144E7 /* HelperMetodsPars.swift */,
 			);
 			path = GazelleCosts;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				CE1B683521B70DEB0036EFAF /* MenuForPartsViewController.swift */,
 				CE143B3A21D558E100296B67 /* TopOfferViewController.swift */,
 				CE112BEC21E25A750041EBD4 /* PopOverForSelected.swift */,
+				CE12ADBD2209FE8E007D6B9F /* PopOverForCar.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -649,6 +655,8 @@
 				CE148E4B21D69D77003F1278 /* TopCell.swift in Sources */,
 				045DB31721998579006FE340 /* SparePartReportCell.swift in Sources */,
 				CE4BFE8521A724CA0064F294 /* CarDetailViewController.swift in Sources */,
+				CE12ADBE2209FE8E007D6B9F /* PopOverForCar.swift in Sources */,
+				0454308B22032B3D007144E7 /* HelperMetodsPars.swift in Sources */,
 				CE112BED21E25A750041EBD4 /* PopOverForSelected.swift in Sources */,
 				CE1D294021B1AF8C00FCEF60 /* MenuBar.swift in Sources */,
 				0415DE30219610F900908DC1 /* SparePartsReportViewController.swift in Sources */,

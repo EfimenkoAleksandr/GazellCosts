@@ -9,17 +9,16 @@
 import UIKit
 
 class TopOfferViewController: UIViewController {
-
+    
     @IBOutlet weak var topOfferTable: UITableView!
     
     let masivCategory = categoriParts
     let masivPart = categoriPartsName
-    //let masivChoicePart = [MasivChoiceParts]()
     var masivExtendedCurent = masivExtended
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         topOfferTable.dataSource = self
         topOfferTable.delegate = self
         
@@ -32,8 +31,10 @@ class TopOfferViewController: UIViewController {
     }
     
 }
-    
+
 extension TopOfferViewController: UITableViewDataSource, UITableViewDelegate, ExpandebleHeaderViewDelegate {
+    
+    //MARK: UICollectionViewDataSourse
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.masivCategory.count
@@ -50,9 +51,9 @@ extension TopOfferViewController: UITableViewDataSource, UITableViewDelegate, Ex
         cell.nameLabel.text = masivPart[indexPath.row]
         
         if let part = HelperMethods.shared.findLastPrice(part: masivPart[indexPath.row]) {
-        cell.sellerLabel.text = part.seller
-        cell.manufakturerLabel.text = part.manufacturer
-        cell.priceLabel.text = part.price
+            cell.sellerLabel.text = part.seller
+            cell.manufakturerLabel.text = part.manufacturer
+            cell.priceLabel.text = part.price
         } else {
             cell.sellerLabel.text = ""
             cell.manufakturerLabel.text = ""
@@ -61,6 +62,8 @@ extension TopOfferViewController: UITableViewDataSource, UITableViewDelegate, Ex
         cell.layer.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         return cell
     }
+    
+    //MARK: UICollectionViewDelegate
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
@@ -83,6 +86,8 @@ extension TopOfferViewController: UITableViewDataSource, UITableViewDelegate, Ex
         return header
     }
     
+    //MARK: toggleSection
+    
     func toggleSection(header: ExpandebleHeaderView, section: Int) {
         self.masivExtendedCurent[section] = !self.masivExtendedCurent[section]
         
@@ -93,5 +98,5 @@ extension TopOfferViewController: UITableViewDataSource, UITableViewDelegate, Ex
         topOfferTable.endUpdates()
         
     }
-        
+    
 }

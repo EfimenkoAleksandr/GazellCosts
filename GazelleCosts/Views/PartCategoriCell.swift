@@ -13,11 +13,11 @@ class PartCategoriCell: UICollectionViewCell {
     @IBOutlet weak var partCategoriImageView: UIImageView!
     
     func configureCell(_ string: String) {
-       
+        
         let imagePhoto = UIImage(named: string)
         if imagePhoto != nil {
             partCategoriImageView.image = imagePhoto
-            self.partCategoriImageView.layer.cornerRadius = 12.0
+            self.partCategoriImageView.layer.cornerRadius = 10.0
             self.partCategoriImageView.layer.masksToBounds = true
         }
     }

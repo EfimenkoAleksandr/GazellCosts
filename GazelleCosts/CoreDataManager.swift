@@ -12,7 +12,6 @@ import UIKit
 
 class CoreDataManager {
     
-   
     static let sharedManager = CoreDataManager()
  
     private init() {}
@@ -20,7 +19,6 @@ class CoreDataManager {
     lazy var persistentContainer: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "GazelleCosts")
-        
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             
@@ -57,6 +55,7 @@ class CoreDataManager {
         car.setValue(name, forKeyPath: "name")
         car.setValue(subName, forKeyPath: "subName")
         car.setValue(number, forKey: "number")
+        car.setValue(true, forKey: "keySave")
        
         do {
             try managedContext.save()
@@ -86,21 +85,28 @@ class CoreDataManager {
         }
     }
     
-    func updateCar(name: String, subName: String, number : String, car : Car) {
+    func updateCar(name: String?, subName: String?, number : String?, bool: Bool?, car : Car) {
         
         let context = CoreDataManager.sharedManager.persistentContainer.viewContext
         
-       
+        if let bool = bool {
+            car.setValue(bool, forKey: "keySave")
+        }
+        if let name = name {
             car.setValue(name, forKey: "name")
+        }
+        if let number = number {
             car.setValue(number, forKey: "number")
+        }
+        if let subName = subName {
             car.setValue(subName, forKey: "subName")
-            
+        }
 //            print("\(String(describing: car.value(forKey: "name")))")
 //            print("\(String(describing: car.value(forKey: "ssn")))")
         
             do {
                 try context.save()
-                print("saved!")
+                print("UpdateCar saved!")
             } catch let error as NSError  {
                 print("Could not save \(error), \(error.userInfo)")
             } catch {
@@ -126,7 +132,33 @@ class CoreDataManager {
         
         do {
             try context.save()
-            print("saved!")
+            print("UpdateCar saved!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            
+        }
+        
+    }
+    
+    func updateCar(property: String, date: String, car : Car) {
+        
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+        
+        //let carDetail = self.saveCarDetail(property)
+        
+        let entity = NSEntityDescription.entity(forEntityName: "CarDetail", in: context)!
+        
+        let carDetail = NSManagedObject(entity: entity, insertInto: context)
+        
+        carDetail.setValue(property, forKeyPath: "propertyCar")
+        carDetail.setValue(date, forKeyPath: "dateOfBirth")
+        
+        car.addToCarDetail(carDetail as! CarDetail)
+        
+        do {
+            try context.save()
+            print("UpdateCar saved!")
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         } catch {
@@ -404,6 +436,40 @@ class CoreDataManager {
         do {
             try managedContext.save()
         } catch {
+        }
+    }
+    
+    //MARK: KeyForParse
+    
+    func saveKey(key: Int) {
+        
+        let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "KeyForParse", in: managedContext)!
+        
+        let choicePart = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        choicePart.setValue(key, forKeyPath: "key")
+                
+        do {
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func fetchKey() -> [KeyForParse]? {
+        
+        let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "KeyForParse")
+        
+        do {
+            let allMasivChoiseParts = try managedContext.fetch(fetchRequest)
+            return allMasivChoiseParts as? [KeyForParse]
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return nil
         }
     }
     

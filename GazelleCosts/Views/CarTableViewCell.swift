@@ -27,14 +27,13 @@ class CarTableViewCell: UITableViewCell {
             super.frame = frame
         }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         self.selectionStyle = .none
         self.layer.cornerRadius = 12.0
-
-        // Configure the view for the selected state
+        
     }
-
+    
 }

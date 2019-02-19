@@ -10,6 +10,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Pop Over For Car-->
+        <scene sceneID="jVe-Na-Gsb">
+            <objects>
+                <tableViewController storyboardIdentifier="PopOverForCar" id="Odl-Aj-1at" customClass="PopOverForCar" customModule="GazelleCosts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DKm-I7-yYr">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopCarCell" id="S7X-Vr-zVw">
+                                <rect key="frame" x="0.0" y="28" width="200" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S7X-Vr-zVw" id="UXj-j7-8GP">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Odl-Aj-1at" id="bIo-iV-ehR"/>
+                            <outlet property="delegate" destination="Odl-Aj-1at" id="b9C-Ys-Fza"/>
+                        </connections>
+                    </tableView>
+                    <size key="freeformSize" width="200" height="200"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D3x-qk-dJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413" y="-644"/>
+        </scene>
         <!--Car View Controller-->
         <scene sceneID="2bi-XB-JAa">
             <objects>
@@ -88,13 +117,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="un8-ve-91v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="405-9u-6ks">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="Aft-Do-gmD">
-                            <connections>
-                                <action selector="AddCar:" destination="cH3-Wa-iTd" id="4ty-67-SSK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="405-9u-6ks"/>
                     <connections>
                         <outlet property="carsTableView" destination="OLr-Za-Ntz" id="1qf-r8-sM5"/>
                         <segue destination="6sn-65-6ga" kind="show" identifier="CarDetail" id="6Uh-sq-DNW"/>
@@ -257,8 +280,8 @@
                                         <constraints>
                                             <constraint firstItem="BP3-gz-3vc" firstAttribute="top" secondItem="StI-sD-DD4" secondAttribute="top" id="3Lf-Rt-ZP6"/>
                                             <constraint firstAttribute="trailing" secondItem="BP3-gz-3vc" secondAttribute="trailing" id="9gO-Zd-2Rq"/>
-                                            <constraint firstAttribute="bottom" secondItem="BP3-gz-3vc" secondAttribute="bottom" id="QaT-3R-777"/>
                                             <constraint firstItem="BP3-gz-3vc" firstAttribute="leading" secondItem="StI-sD-DD4" secondAttribute="leading" id="WHq-JB-3nx"/>
+                                            <constraint firstAttribute="bottom" secondItem="BP3-gz-3vc" secondAttribute="bottom" id="mwz-m7-d3T"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="partImageView" destination="BP3-gz-3vc" id="z36-oR-GI7"/>
@@ -284,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lli-1v-s6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="564"/>
+            <point key="canvasLocation" x="2520.8000000000002" y="537.48125937031489"/>
         </scene>
         <!--Part In Categori View Controller-->
         <scene sceneID="9ec-f5-sFS">

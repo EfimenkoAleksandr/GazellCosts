@@ -36,7 +36,7 @@ class CarDetailCell: UITableViewCell {
         self.selectionStyle = .none
         self.layer.cornerRadius = 10.0
         self.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        // Configure the view for the selected state
+       
     }
 
 }

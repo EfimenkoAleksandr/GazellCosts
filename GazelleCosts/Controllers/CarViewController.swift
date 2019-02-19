@@ -21,44 +21,33 @@ class CarViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-               
+        
         carsTableView.dataSource = self
         carsTableView.delegate = self
         
         title = "Cars"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"carForBar"), style: .plain, target: self, action: #selector(setupBarButton))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"carForBar"), style: .plain, target: self, action: #selector(setupBarButton))
+        
+        self.setButton()
         
         DispatchQueue.global(qos: .utility).async {
             HelperMethods.shared.newMonth()
         }
-        HelperMethods.shared.setBackGround(view: self.view, tableView: self.carsTableView)
-        
-//        carsTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
         
     }
     
-//    private func saveMyCar() {
-//
-//        for curentCar in self.cars {
-//            let car = PFObject(className:"Car")
-//            car["name"] = curentCar.name
-//            car["subName"] = curentCar.subName
-//            car["number"] = curentCar.number
-//
-//            // Saves the new object.
-//            car.saveInBackground {
-//                (success: Bool, error: Error?) in
-//                if (success) {
-//                    // The object has been saved.
-//                    print("saved")
-//                } else {
-//                    // There was a problem, check error.description
-//                }
-//            }
-//        }
-//
-//
-//    }
+    //MARK: SetapButton for left button
+    
+    private func setButton() {
+        let button =  UIButton(type: .custom)
+        button.setImage(UIImage(named: "internet"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 80, height: 31)
+        button.addTarget(self, action: #selector(self.tapped), for: .touchUpInside)
+        button.imageView?.contentMode = .scaleAspectFit
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
     
     @objc func setupBarButton(){
         let alert1 = UIAlertController(title: "Name", message: "Enter name", preferredStyle: UIAlertController.Style.alert)
@@ -77,10 +66,7 @@ class CarViewController: UIViewController {
             if let nameTextFild = alert1.textFields?[0].text, let subNameTextFild = alert1.textFields?[1].text, let numderTextFild = alert1.textFields?[2].text {
                 CoreDataManager.sharedManager.saveCar(name: nameTextFild, subName: subNameTextFild, number: numderTextFild)
                 
-                if let carFetches = CoreDataManager.sharedManager.fetchAllCars() {
-                    self.cars = carFetches
-                }
-                self.carsTableView.reloadData()
+                self.reloadMyTable()
             }
         }
         let cancelAction = UIAlertAction(title: "cancel", style: UIAlertAction.Style.cancel, handler: nil)
@@ -90,15 +76,39 @@ class CarViewController: UIViewController {
         present(alert1, animated: true, completion: nil)
     }
     
+    //MARK: Set background for ViewController
+    
+    override func viewWillLayoutSubviews() {
+        HelperMethods.shared.setBackGround(view: self.view, tableView: self.carsTableView)
+    }
+    
+    //MARK: PopOverViewController for left button
+    
+    @objc private func tapped() {
+        
+        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "PopOverForCar") else { return }
+        popVC.modalPresentationStyle = .popover
+        let popOverVC  = popVC.popoverPresentationController
+        popOverVC?.delegate = self
+        popOverVC?.sourceView = self.navigationItem.rightBarButtonItem?.customView
+        popOverVC?.sourceRect = CGRect(x: (navigationItem.rightBarButtonItem?.customView?.bounds.midX)!, y: (self.navigationItem.rightBarButtonItem?.customView?.bounds.minY)!, width: 0, height: 0)
+        popVC.preferredContentSize = CGSize(width: 200, height: 200)
+        
+        self.present(popVC, animated: true)
+        
+    }
+    
 }
 
 extension CarViewController: UITableViewDataSource, UITableViewDelegate {
-
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    //MARK: UICollectionViewDataSourse
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cars.count
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell") as! CarTableViewCell
         cell.name.text = cars[indexPath.row].name
@@ -110,8 +120,10 @@ extension CarViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    //MARK: UICollectionViewDelegate
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
+        
         CoreDataManager.sharedManager.delete(cars[indexPath.row])
         self.cars = CoreDataManager.sharedManager.fetchAllCars()!
         self.carsTableView.reloadData()
@@ -120,11 +132,7 @@ extension CarViewController: UITableViewDataSource, UITableViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let carFetches = CoreDataManager.sharedManager.fetchAllCars() {
-            self.cars = carFetches
-            //self.saveMyCar()
-        }
-        
+        self.reloadMyTable()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -141,7 +149,26 @@ extension CarViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
         }
-        
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.reloadMyTable()
+    }
+    
+    func reloadMyTable() {
+        if let carFetches = CoreDataManager.sharedManager.fetchAllCars() {
+            if carFetches.count > 0 {
+                self.cars = carFetches
+                self.carsTableView.reloadData()
+            }
+        }
+    }
+    
+}
+
+extension CarViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
 }

@@ -12,16 +12,16 @@ class SparePartsCell: UICollectionViewCell {
     
     @IBOutlet weak var partImageView: UIImageView!
     
-    func configureCell(_ string: String) {
-      
+    func configureCell(_ string: String,_ name: String) {
+        
         let imagePhoto = UIImage(named: string)
         if imagePhoto != nil {
-        partImageView.image = imagePhoto
-        self.partImageView.layer.cornerRadius = 12.0
+            self.partImageView.image = imagePhoto
+            self.partImageView.layer.cornerRadius = 10.0
             self.partImageView.layer.masksToBounds = true
         }
     }
     
-        
+    
     
 }

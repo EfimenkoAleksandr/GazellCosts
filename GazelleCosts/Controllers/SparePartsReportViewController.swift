@@ -9,7 +9,7 @@
 import UIKit
 
 class SparePartsReportViewController: UIViewController, ExpandebleHeaderViewDelegate {
-
+    
     @IBOutlet weak var reportTableView: UITableView!
     @IBOutlet weak var curentLabel: UILabel!
     @IBOutlet weak var vasiaLabel: UILabel!
@@ -21,7 +21,7 @@ class SparePartsReportViewController: UIViewController, ExpandebleHeaderViewDele
         super.viewDidLoad()
         
         title = "Report"
-      
+        
         if let masivCP = CoreDataManager.sharedManager.fetchAllMasivChoiseParts() {
             self.masivChoiceParts = masivCP
             self.masivChoiceParts = self.masivChoiceParts.sorted(by: { (first: MasivChoiceParts, second: MasivChoiceParts) -> Bool in
@@ -29,7 +29,7 @@ class SparePartsReportViewController: UIViewController, ExpandebleHeaderViewDele
         }
         reportTableView.dataSource = self
         reportTableView.delegate = self
-        //self.reportTableView.backgroundView = UIImageView(image: UIImage(named: "gray-background"))
+        
         self.reportTableView.separatorStyle = .none
         self.setunNavBar()
         
@@ -41,34 +41,36 @@ class SparePartsReportViewController: UIViewController, ExpandebleHeaderViewDele
         
     }
     
+    //MARK: addRightButtonItem
+    
     func addRightButtonItem() {
         let button =  UIButton(type: .custom)
         button.setImage(UIImage(named: "statistika"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        //button.backgroundColor = .blue
         button.addTarget(self, action: #selector(buttonCreate), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 40, height: 30)//CGRectMake(0, 0, 53, 31)
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
-}
-
-@objc func buttonCreate() {
-    let vc = storyboard?.instantiateViewController(withIdentifier: "SparePartReportDetail") as! SparePartReportDetailViewController
-    self.navigationController?.pushViewController(vc, animated: true)
+    }
     
-}
+    @objc func buttonCreate() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SparePartReportDetail") as! SparePartReportDetailViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     func setunNavBar() {
-      //  navigationController?.navigationBar.setBackgroundImage(UIImage(named: "gray-background"), for: .default)
-       // navigationController?.navigationBar.prefersLargeTitles = true
+        // navigationController?.navigationBar.prefersLargeTitles = true
         let sc = UISearchController(searchResultsController: nil)
         navigationItem.searchController = sc
-       // navigationItem.hidesSearchBarWhenScrolling = false
+        // navigationItem.hidesSearchBarWhenScrolling = false
     }
-
+    
 }
 
 extension SparePartsReportViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: UICollectionDataSourse
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.masivChoiceParts.count
@@ -87,15 +89,15 @@ extension SparePartsReportViewController: UITableViewDataSource, UITableViewDele
         let masivMCP = self.masivChoiceParts[indexPath.section]
         let masiv = masivMCP.forSaveCP?.allObjects as! [ForSaveChoisePart]
         let choisePart = masiv[indexPath.row]
-
-
+        
+        
         cell.nameLabel.text = choisePart.name
         cell.countLabel.text = choisePart.count
         cell.priceLabel.text = choisePart.price
         cell.sellerLabel.text = choisePart.seller
-
+        
         if masiv[indexPath.row].seller == "v" {
-           cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         } else if masiv[indexPath.row].seller == "l" {
             cell.backgroundColor = #colorLiteral(red: 0.9091644832, green: 1, blue: 0.5699023115, alpha: 1)
         } else {
@@ -104,6 +106,8 @@ extension SparePartsReportViewController: UITableViewDataSource, UITableViewDele
         
         return cell
     }
+    
+    //MARK: UICollectionDelegate
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
@@ -126,10 +130,19 @@ extension SparePartsReportViewController: UITableViewDataSource, UITableViewDele
         return header
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        CoreDataManager.sharedManager.deleteMasivChoiseParts(self.masivChoiceParts[indexPath.section])
+        self.masivChoiceParts = CoreDataManager.sharedManager.fetchAllMasivChoiseParts()!
+        reportTableView.reloadData()
+    }
+    
+    //MARK: toggleSection
+    //func for sliding sections
+    
     func toggleSection(header: ExpandebleHeaderView, section: Int) {
         self.masivChoiceParts[section].expanded = !self.masivChoiceParts[section].expanded
         DispatchQueue.global(qos: .utility).async {
-        let curentPartInGlobalQueue = HelperMethods.shared.calkulateCurentParts(parts: self.masivChoiceParts[section])
+            let curentPartInGlobalQueue = HelperMethods.shared.calkulateCurentParts(parts: self.masivChoiceParts[section])
             DispatchQueue.main.async {
                 self.curentLabel.text = curentPartInGlobalQueue
             }
@@ -153,14 +166,5 @@ extension SparePartsReportViewController: UITableViewDataSource, UITableViewDele
         reportTableView.endUpdates()
         
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        CoreDataManager.sharedManager.deleteMasivChoiseParts(self.masivChoiceParts[indexPath.section])
-        self.masivChoiceParts = CoreDataManager.sharedManager.fetchAllMasivChoiseParts()!
-        reportTableView.reloadData()
-    }
-    
-    
-
     
 }

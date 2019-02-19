@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="class">
+        <attribute name="keySave" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="masivPropertys" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,16 +28,20 @@
         <attribute name="seller" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="masivChoisePart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MasivChoiceParts" inverseName="forSaveCP" inverseEntity="MasivChoiceParts" syncable="YES"/>
     </entity>
+    <entity name="KeyForParse" representedClassName="KeyForParse" syncable="YES" codeGenerationType="class">
+        <attribute name="key" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="MasivChoiceParts" representedClassName="MasivChoiceParts" syncable="YES" codeGenerationType="class">
         <attribute name="dateCreation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="expanded" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="forSaveCP" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ForSaveChoisePart" inverseName="masivChoisePart" inverseEntity="ForSaveChoisePart" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Car" positionX="-249.26953125" positionY="-238.9765625" width="128" height="120"/>
+        <element name="Car" positionX="-249.26953125" positionY="-238.9765625" width="128" height="135"/>
         <element name="CarDetail" positionX="-36.47265625" positionY="-193.27734375" width="128" height="90"/>
         <element name="ChoicePart" positionX="225.44921875" positionY="-239.24609375" width="128" height="120"/>
         <element name="ForSaveChoisePart" positionX="76.3828125" positionY="55.80859375" width="128" height="135"/>
+        <element name="KeyForParse" positionX="223.91796875" positionY="-76.84375" width="128" height="60"/>
         <element name="MasivChoiceParts" positionX="-171.99609375" positionY="48.90625" width="128" height="88"/>
     </elements>
 </model>
