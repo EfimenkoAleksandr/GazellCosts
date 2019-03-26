@@ -37,6 +37,12 @@ class CarViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.reloadMyTable()
+    }
+    
     //MARK: SetapButton for left button
     
     private func setButton() {
@@ -127,12 +133,6 @@ extension CarViewController: UITableViewDataSource, UITableViewDelegate {
         CoreDataManager.sharedManager.delete(cars[indexPath.row])
         self.cars = CoreDataManager.sharedManager.fetchAllCars()!
         self.carsTableView.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.reloadMyTable()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

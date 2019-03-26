@@ -12,94 +12,89 @@ import Parse
 class HelperMetodsPars {
     
     static let shared = HelperMetodsPars()
-
+    
     func saveMyCar() {
         if let masivCars = CoreDataManager.sharedManager.fetchAllCars() {
-        let cars = masivCars
-        
-        for curentCar in cars {
-            if curentCar.keySave == true {
-                let car = PFObject(className: "MyCar")
-                car["name"] = curentCar.name
-                car["subName"] = curentCar.subName
-                car["number"] = curentCar.number
-                
-                let masivCarDetail = curentCar.carDetail?.allObjects as! [CarDetail]
-                var mas = [[String]]()
-                for masiv in masivCarDetail {
-                    mas.append([masiv.propertyCar!, masiv.dateOfBirth!])
+            let cars = masivCars
+            
+            for curentCar in cars {
+                if curentCar.keySave == true {
+                    let car = PFObject(className: "MyCar")
+                    car["name"] = curentCar.name
+                    car["subName"] = curentCar.subName
+                    car["number"] = curentCar.number
+                    
+                    let masivCarDetail = curentCar.carDetail?.allObjects as! [CarDetail]
+                    var mas = [[String]]()
+                    for masiv in masivCarDetail {
+                        mas.append([masiv.propertyCar!, masiv.dateOfBirth!])
+                    }
+                    car["masiv"] = mas
+                    
+                    // Saves the new object.
+                    car.saveInBackground {
+                        (success: Bool, error: Error?) in
+                        if (success) {
+                            // The object has been saved.
+                            print("Pars saved")
+                        } else {
+                            print("no saved")
+                            // There was a problem, check error.description
+                        }
+                    }
+                    CoreDataManager.sharedManager.updateCar(name: nil, subName: nil, number: nil, bool: false, car: curentCar)
                 }
-                car["masiv"] = mas
-                
-                // Saves the new object.
-                car.saveInBackground {
-                    (success: Bool, error: Error?) in
-                    if (success) {
-                        // The object has been saved.
-                        print("Pars saved")
-                    } else {
-                        print("no saved")
-                        // There was a problem, check error.description
+            }
+        }
+    }
+    
+    
+    func fetchCar() {
+        
+        var masivCars = [Car]()
+        if let masCars = CoreDataManager.sharedManager.fetchAllCars() {
+            masivCars = masCars
+        }
+        
+        let query = PFQuery(className: "MyCar")
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                // There was no error in the fetch
+                if let returnedobjects = objects {
+                    
+                    for object in returnedobjects {
+                        var carBool = true
+                        if masivCars.count > 0 {
+                            for car in masivCars {
+                                if car.name == (object.value(forKey: "name") as! String) && car.subName == (object.value(forKey: "subName") as! String) && car.number == (object.value(forKey: "number") as! String) {
+                                    carBool = false
+                                    break
+                                }
+                            }
+                        }
+                        if carBool {
+                            CoreDataManager.sharedManager.saveCar(name: object.value(forKey: "name") as! String, subName: object.value(forKey: "subName") as! String, number: object.value(forKey: "number") as! String)
+                        }
                     }
                 }
-                CoreDataManager.sharedManager.updateCar(name: nil, subName: nil, number: nil, bool: false, car: curentCar)
-            }
-        }
-        }
-    }
-
-
-    func fetchCar() {
-       
-    //        let query = PFQuery(className: "Car")
-    //        query.getObjectInBackground(withId: "L8gW0wrHs1") { (object, error) in
-    //            if object != nil && error == nil {
-    //                //Succesfully reteve object
-    //                print(object!)
-    //            } else {
-    //                //Some error happened
-    //                print("error")
-    //            }
-    //        }
-    let query = PFQuery(className: "MyCar")
-    query.findObjectsInBackground { (objects, error) in
-        if error == nil {
-            // There was no error in the fetch
-            if let returnedobjects = objects {
-                for object in returnedobjects {
-                    CoreDataManager.sharedManager.saveCar(name: object.value(forKey: "name") as! String, subName: object.value(forKey: "subName") as! String, number: object.value(forKey: "number") as! String)
-                
-                }
-            }
-        }
-    }
-}
-
- func deleteCar() {
-    let query = PFQuery(className: "MyCar")
-    
-    query.findObjectsInBackground { (objects, error) in
-        if error == nil {
-            if let returnedobjects = objects {
-                for object in returnedobjects {
-                   object.deleteInBackground()
-                    print("object delete")
-                }
             }
         }
     }
     
-//    query.getObjectInBackground(withId: "umONY82IDI") { (object, error) in
-//        if object != nil && error == nil {
-//            //Succesfully reteve object
-//            print(object!)
-//            object?.deleteInBackground()
-//        } else {
-//            //Some error happened
-//            print("error")
-//        }
-//    }
-}
+    func deleteCar() {
+        let query = PFQuery(className: "MyCar")
+        
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                if let returnedobjects = objects {
+                    for object in returnedobjects {
+                        object.deleteInBackground()
+                        print("object delete")
+                    }
+                }
+            }
+        }
+    }
     
     func fetchDetailCar(car: Car, tableView: UITableView) -> [CarDetail]? {
         
@@ -128,5 +123,5 @@ class HelperMetodsPars {
         }
         return masivCarStr
     }
-
+    
 }

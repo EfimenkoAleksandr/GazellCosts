@@ -15,18 +15,18 @@ class HelperMethods {
     
     //    -------------------------------------------------------------------------------------
     //MARK: CoreDataManager
-
-func curentDate() -> String {
     
-    let date = Date()
-    let dateFormater = DateFormatter()
-    dateFormater.dateFormat = "yyyy/MM/dd HH:mm"
-    let dateString = dateFormater.string(from: date)
+    func curentDate() -> String {
+        
+        let date = Date()
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy/MM/dd HH:mm"
+        let dateString = dateFormater.string(from: date)
+        
+        return dateString
+    }
     
-    return dateString
-}
-  
-//    -------------------------------------------------------------------------------------
+    //    -------------------------------------------------------------------------------------
     //MARK: SparePartsReportViewController
     
     func calkulateCurentParts(parts: MasivChoiceParts) -> String {
@@ -38,7 +38,7 @@ func curentDate() -> String {
         }
         return price.description
     }
-
+    
     func allMasivChoisePart(masiv: [MasivChoiceParts]) -> String {
         var priceAllParts = 0
         for part in masiv {
@@ -124,7 +124,7 @@ func curentDate() -> String {
     func createAlert(title: String, message: String, number: Int, controller: UIViewController) -> UIAlertController {
         
         let alert1 = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-
+        
         let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { (action) in
             switch number {
             case 0:
@@ -146,11 +146,10 @@ func curentDate() -> String {
         let cancelAction = UIAlertAction(title: "cancel", style: .cancel) { (cancel) in
             controller.dismiss(animated: true, completion: nil)
         }
-
+        
         alert1.addAction(okAction)
         alert1.addAction(cancelAction)
-//        present(alert1, animated: true, completion: nil)
-
+        
         return alert1
     }
     
@@ -161,7 +160,7 @@ func curentDate() -> String {
         let fon = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         print("with -----------------------\(view.frame.width)")
         print("height -----------------------\(view.frame.height)")
-        fon.image = UIImage(named: "gazelBackground")
+        fon.image = UIImage(named: "gazelBackground1")
         fon.contentMode = .scaleAspectFit
         tableView.backgroundView = fon
         tableView.separatorStyle = .none
@@ -180,24 +179,24 @@ func curentDate() -> String {
     }
     
     func createLabel(text: String, cellWidth: CGFloat) -> UILabel {
-    
-    let label = UILabel()
-    label.font = UIFont(name: "Arial-BoldMT", size: 16)
-    label.text = text
-    label.textAlignment = .center
-    label.numberOfLines = 0
-    label.textColor = UIColor.black
-    label.backgroundColor = UIColor.white
-    //cell.addSubview(label)
-    
-    let maxSize = CGSize(width: cellWidth, height: 20)
-    var size = label.sizeThatFits(maxSize)
-    if size.width > cellWidth || size.width > cellWidth - 20 {
-    size.width = cellWidth - 20
-    }
-    
-    label.frame = CGRect(origin: CGPoint(x: 10, y: 0), size: size)
-     
+        
+        let label = UILabel()
+        label.font = UIFont(name: "Arial-BoldMT", size: 16)
+        label.text = text
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = UIColor.black
+        label.backgroundColor = UIColor.white
+        //cell.addSubview(label)
+        
+        let maxSize = CGSize(width: cellWidth, height: 20)
+        var size = label.sizeThatFits(maxSize)
+        if size.width > cellWidth || size.width > cellWidth - 20 {
+            size.width = cellWidth - 20
+        }
+        
+        label.frame = CGRect(origin: CGPoint(x: 10, y: 0), size: size)
+        
         return label
     }
 }

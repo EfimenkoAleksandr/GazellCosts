@@ -42,7 +42,7 @@
         <!--Car View Controller-->
         <scene sceneID="2bi-XB-JAa">
             <objects>
-                <viewController id="cH3-Wa-iTd" customClass="CarViewController" customModule="GazelleCosts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarVC" id="cH3-Wa-iTd" customClass="CarViewController" customModule="GazelleCosts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LVb-EP-RXu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -432,10 +432,10 @@
                     <navigationItem key="navigationItem" id="Eh9-kN-zfM"/>
                     <connections>
                         <outlet property="menuForPartsTableView" destination="Ecl-ge-UTg" id="hjZ-mI-LCw"/>
-                        <segue destination="tG9-AV-VEk" kind="show" identifier="Запчасти" id="4g1-ce-ZaU"/>
-                        <segue destination="oF3-go-jkW" kind="show" identifier="Отчёты по запчастям" id="Cxz-93-hRQ"/>
-                        <segue destination="MyY-5T-lXB" kind="show" identifier="Выбранные запчасти" id="eR1-Yu-ZSl"/>
-                        <segue destination="Rl2-bM-fbw" kind="show" identifier="Последняя цена" id="Muh-93-21E"/>
+                        <segue destination="tG9-AV-VEk" kind="show" identifier="Spare parts" id="4g1-ce-ZaU"/>
+                        <segue destination="oF3-go-jkW" kind="show" identifier="Spare parts reports" id="Cxz-93-hRQ"/>
+                        <segue destination="MyY-5T-lXB" kind="show" identifier="Selected Parts" id="eR1-Yu-ZSl"/>
+                        <segue destination="Rl2-bM-fbw" kind="show" identifier="Last price" id="Muh-93-21E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5u-s5-JWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -930,7 +930,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="car.png" width="40" height="40"/>
-        <image name="shop.png" width="40" height="40"/>
+        <image name="car.png" width="30" height="30"/>
+        <image name="shop.png" width="30" height="30"/>
     </resources>
 </document>
